@@ -1,0 +1,30 @@
+[09-Jan-2025 11:26:08 America/Fortaleza] PHP Warning:  include(../includes/connect.php): Failed to open stream: No such file or directory in /home2/webdbs73/public_html/sistema/index.php on line 2
+[09-Jan-2025 11:26:08 America/Fortaleza] PHP Warning:  include(): Failed opening '../includes/connect.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/webdbs73/public_html/sistema/index.php on line 2
+[09-Jan-2025 11:26:08 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/webdbs73/public_html/sistema/index.php:4) in /home2/webdbs73/public_html/sistema/index.php on line 30
+[09-Jan-2025 11:32:48 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/webdbs73/public_html/sistema/index.php:4) in /home2/webdbs73/public_html/sistema/index.php on line 30
+[09-Jan-2025 11:40:25 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/webdbs73/public_html/sistema/index.php:4) in /home2/webdbs73/public_html/sistema/index.php on line 30
+[09-Jan-2025 15:03:26 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 29
+[09-Jan-2025 15:03:26 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/webdbs73/public_html/sistema/validar_login.php:29) in /home2/webdbs73/public_html/sistema/validar_login.php on line 32
+[09-Jan-2025 15:04:42 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 29
+[09-Jan-2025 15:04:42 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/webdbs73/public_html/sistema/validar_login.php:29) in /home2/webdbs73/public_html/sistema/validar_login.php on line 32
+[09-Jan-2025 15:05:26 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 29
+[09-Jan-2025 15:05:26 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/webdbs73/public_html/sistema/validar_login.php:29) in /home2/webdbs73/public_html/sistema/validar_login.php on line 32
+[09-Jan-2025 15:06:36 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 29
+[09-Jan-2025 15:06:36 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/webdbs73/public_html/sistema/validar_login.php:29) in /home2/webdbs73/public_html/sistema/validar_login.php on line 32
+[10-Jan-2025 11:28:25 America/Fortaleza] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home2/webdbs73/public_html/sistema/includes/connect.php on line 5
+[10-Jan-2025 11:28:25 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 20
+[10-Jan-2025 11:28:25 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/webdbs73/public_html/sistema/includes/connect.php:5) in /home2/webdbs73/public_html/sistema/validar_login.php on line 23
+[10-Jan-2025 11:30:15 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 20
+[10-Jan-2025 11:30:27 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 20
+[10-Jan-2025 11:33:49 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 20
+[10-Jan-2025 11:34:05 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 20
+[10-Jan-2025 11:53:44 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 20
+[10-Jan-2025 13:15:48 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 20
+[10-Jan-2025 13:42:17 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 20
+[13-Jan-2025 11:29:51 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 20
+[13-Jan-2025 11:30:34 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 20
+[13-Jan-2025 21:22:35 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 20
+[16-Jan-2025 09:20:42 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 20
+[16-Jan-2025 10:03:59 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 20
+[16-Jan-2025 10:38:00 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 20
+[23-Jan-2025 08:24:51 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home2/webdbs73/public_html/sistema/validar_login.php on line 20
