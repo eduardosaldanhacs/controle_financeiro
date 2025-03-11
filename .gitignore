@@ -1,0 +1,19 @@
+# Ignorar pastas do sistema
+Ambiente de Impressão/
+Ambiente de Rede/
+
+# Ignorar arquivos de sistema do Windows/macOS
+Thumbs.db
+.DS_Store
+
+# Ignorar dependências de PHP (caso use Composer)
+vendor/
+composer.lock
+
+# Ignorar configurações locais
+.env
+*.log
+
+# Ignorar cache e arquivos temporários
+cache/
+tmp/
