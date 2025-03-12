@@ -2,44 +2,44 @@
     <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container-fluid px-xxl-5 px-xl-5 px-lg-5 px-md-5 px-sm-3">
             <div class="collapse navbar-collapse row" id="navbarNav">
-                <div class="col-6">
+                <div class="col-4">
                     <ul class="navbar-nav align-items-center">
                         <li class="nav-item">
-                            <a class="nav-link active text-white fs-5 pb-1" aria-current="page" href="<?= SITE?>despesas&id=<?php echo $id ?>">Despesas</a>
+                            <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE?>despesas&id=<?php echo $id ?>">Despesas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active text-white fs-5 pb-1" aria-current="page" href="<?= SITE ?>lancamentos">Lançamentos</a>
+                            <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>lancamentos">Lançamentos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active text-white fs-5 pb-1" aria-current="page" href="<?= SITE ?>listagens">Listagens</a>
+                            <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>listagens">Listagens</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active text-white fs-5 pb-1" aria-current="page" href="<?= SITE ?>controllers/sair.php">Sair</a>
+                            <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>controllers/sair.php">Sair</a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-2">
+                <div class="col-3">
                     <form action="<?php SITE ?>controllers/inserir_entrada.php" method="POST">
                         <div class="row align-items-center">
-                            <div class="col-8">
-                                <label for="" class="form-label text-white">Entrada: </label>
+                            <div class="col-6">
+                                <label for="" class="form-label text-white fs-topo">Entrada: </label>
                                 <input type="text" name="entrada" class="form-control mb-2" id="valorEntrada">
                             </div>
                             <div class="col-4 mt-4">
-                                <button type="submit" class="btn btn-outline-light"><i class="fa-solid fa-plus"></i></button>
+                                <input type="submit" class="btn btn-outline-light"><i class="fa-solid fa-plus"></i>
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="col-2">
+                <div class="col-3">
                     <form action="<?php SITE ?>controllers/retirar_entrada.php" method="POST">
                         <div class="row align-items-center">
-                            <div class="col-8">
-                                <label for="" class="form-label text-white">Saída: </label>
+                            <div class="col-6">
+                                <label for="" class="form-label text-white fs-topo">Saída: </label>
                                 <input type="text" name="entrada" class="form-control mb-2" id="valorSaida">
                             </div>
                             <div class="col-4 mt-4">
-                                <button type="submit" class="btn btn-outline-light"><i class="fa-solid fa-minus"></i></button>
+                                <input type="submit" class="btn btn-outline-light"><i class="fa-solid fa-minus"></i>
                             </div>
                         </div>
                     </form>
