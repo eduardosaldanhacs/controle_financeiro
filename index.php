@@ -2,7 +2,7 @@
 include('modulos/topo.php');
 if (verificaLogin()) {
     include('views/header.php');
-    $pag = isset($_GET['pag']) ? $_GET['pag'] : 'home';
+    $pag = isset($_GET['a']) ? $_GET['a'] : 'home';
 
     switch ($pag) {
         case 'despesas':

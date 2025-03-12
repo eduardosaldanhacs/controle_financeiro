@@ -17,7 +17,7 @@ if (isset($_GET['data_inicio']) && isset($_GET['data_fim']) && !empty($_GET['dat
     $where .= " AND data_lancamentos BETWEEN '$data_inicio' AND '$data_fim'";
 }
 
-$buscar_despesas = "SELECT * FROM tb_lancamentos WHERE 1=1 $where ORDER BY data_lancamentos DESC";
+$buscar_despesas = "SELECT * FROM tb_lancamentos WHERE $where ORDER BY data_lancamentos DESC";
 $resultado = mysqli_query($conexao, $buscar_despesas);
 ?>
 <div class="container pt-5">

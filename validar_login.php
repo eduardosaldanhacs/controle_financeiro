@@ -18,10 +18,10 @@ if (mysqli_num_rows($resultado) > 0) {
     $_SESSION['cpf'] = $cpf;
     $_SESSION['nome'] = $dados['nome']; 
 
-    header("Location: ". SITE ."index.php?pag=home&id=$id");
+    header("Location: ". SITE ."home");
     exit;
 } else {
-    header("Location: ". SITE ."index.php?pag=login");
+    header("Location: ". SITE);
 
 }
 ?>

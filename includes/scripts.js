@@ -1,23 +1,26 @@
 const saldoInput = document.getElementById('saldo');
 const toggleOlho = document.getElementById('toggle-olho');
 
-let visivel = true;
+if (saldoInput && toggleOlho) {
+    let visivel = true;
 
-if (visivel) {
-    saldoInput.type = 'text';
-    toggleOlho.src = 'https://img.icons8.com/?size=100&id=60022&format=png&color=FFFFFF'; // Ícone do olho aberto
-}
-
-toggleOlho.addEventListener('click', () => {
-    visivel = !visivel;
     if (visivel) {
         saldoInput.type = 'text';
         toggleOlho.src = 'https://img.icons8.com/?size=100&id=60022&format=png&color=FFFFFF';
-    } else {
-        saldoInput.type = 'password';
-        toggleOlho.src = 'https://img.icons8.com/?size=100&id=59814&format=png&color=FFFFFF';
     }
-});
+
+    toggleOlho.addEventListener('click', () => {
+        visivel = !visivel;
+        if (visivel) {
+            saldoInput.type = 'text';
+            toggleOlho.src = 'https://img.icons8.com/?size=100&id=60022&format=png&color=FFFFFF';
+        } else {
+            saldoInput.type = 'password';
+            toggleOlho.src = 'https://img.icons8.com/?size=100&id=59814&format=png&color=FFFFFF';
+        }
+    });
+}
+
 
 $(document).ready(function () {
     $('#valorEntrada').mask('000.000.000,00', {
