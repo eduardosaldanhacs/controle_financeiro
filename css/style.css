@@ -10,6 +10,10 @@
     background: rgb(21, 17, 88);
 }
 
+.bg-2 {
+    background: rgb(11, 9, 46);
+}
+
 .cor1{
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); 
@@ -51,3 +55,6 @@
 .fs-topo {
     font-size: 13px;
 }
+
+.fs-7 { font-size: 0.75rem !important; } /* Aproximadamente 12px */
+.fs-8 { font-size: 0.625rem !important; } /* Aproximadamente 10px */

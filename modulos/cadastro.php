@@ -37,16 +37,19 @@ include('../define.php');
         <div class="text-start py-5">
             <div class="row align-items-stretch d-flex justify-content-center">
                 <div class="col-md-5 sombra border rounded-5 px-4 border-4 flex-column d-flex h-100  text-white border-light">
-                    <form action="<?= SITE ?>validar_login.php" method="POST" class="d-flex flex-column flex-grow-1 justify-content-between">
-                        <h1 class="py-4 text-center">Login</h1>
+                    <form action="<?= SITE ?>controllers/cadastrar.php" method="POST" class="d-flex flex-column flex-grow-1 justify-content-between">
+                        <h1 class="py-4 text-center">Cadastro</h1>
+                        <label for="">Nome</label>
+                        <input type="text" class="form-control mb-3" required name="nome">
                         <label for="">CPF</label>
                         <input type="text" class="form-control mb-3" required name="cpf" id="cpf">
                         <label for="">Senha</label>
-                        <input type="password" class="form-control mb-3" name="senha">
+                        <input type="password" class="form-control mb-3" name="senha" required>
+                        <label for="">Confirma senha</label>
+                        <input type="password" class="form-control mb-3" required name="confirma_senha">
                         <button type="submit" class="btn btn-primary my-3">Entrar</button>
                         <div class="col-5 pb-3">
-                            <a href="<?= SITE ?>controllers/recuperar_senha.php" class="text-white text-decoration-none fs-7">Esqueci minha senha</a>
-                            <a href="<?= SITE ?>modulos/cadastro.php" class="text-white text-decoration-none fs-7">Cadastre-se</a>
+                            <a href="<?= SITE ?>modulos/login.php" class="text-white text-decoration-none fs-7">Já possui login? Entre</a>
                         </div>
                     </form>
                 </div>

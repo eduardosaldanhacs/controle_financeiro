@@ -1,10 +1,15 @@
 <?php
 include('modulos/topo.php');
 if (verificaLogin()) {
-    include('views/header.php');
     $pag = isset($_GET['a']) ? $_GET['a'] : 'home';
+    echo $pag;
+    switch ($pag) {                
+        case 'cadastro':
+            include('views/cadastro.php');
+            break;
 
-    switch ($pag) {
+            
+        include('views/header.php');
         case 'despesas':
             include('views/despesas.php');
             break;
