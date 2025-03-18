@@ -2,22 +2,26 @@
 include('modulos/topo.php');
 if (verificaLogin()) {
     $pag = isset($_GET['a']) ? $_GET['a'] : 'home';
-    echo $pag;
+    //echo $pag;
+    include('views/header.php');
     switch ($pag) {                
         case 'cadastro':
             include('views/cadastro.php');
+            break;    
+        case 'cadastro_despesas';
+            include('views/cadastro_despesas.php');
             break;
-
-            
-        include('views/header.php');
         case 'despesas':
             include('views/despesas.php');
             break;
+        case 'cadastro_lancamentos':
+            include('views/cadastro_lancamentos.php');
+            break;
+        case "cadastro_despesas&cod='{$_GET['b']}'":
+            include("views/cadastro_despesas.php?id={$_GET['b']}'");
+            break;
         case 'lancamentos':
             include('views/lancamentos.php');
-            break;
-        case 'listagens':
-            include('views/listagens.php');
             break;
         case 'editar':
             include('views/editar.php');

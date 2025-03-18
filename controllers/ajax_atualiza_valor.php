@@ -19,15 +19,15 @@ if ($id === null || $valor === null) {
 }
 
 
-$stmt = $conexao->prepare("UPDATE tb_lancamentos SET valor = ? WHERE id = ?");
+$stmt = $conn->prepare("UPDATE tb_lancamentos SET valor = ? WHERE id = ?");
 $stmt->bind_param("di", $valor, $id); // d = double (float), i = integer
 
 if ($stmt->execute()) {
     echo json_encode(['success' => true]);
 } else {
-    echo json_encode(['success' => false, 'error' => $conexao->error]);
+    echo json_encode(['success' => false, 'error' => $conn->error]);
 }
 
 $stmt->close();
-$conexao->close();
+$conn->close();
 ?>

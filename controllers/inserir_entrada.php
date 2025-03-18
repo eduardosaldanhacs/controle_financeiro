@@ -5,7 +5,7 @@ $saldo = 0;
 
 $entradaInicial = $_POST['entrada'];
 $buscaSaldo = "SELECT saldo FROM tb_usuarios";
-$resultado = mysqli_query($conexao, $buscaSaldo);
+$resultado = mysqli_query($conn, $buscaSaldo);
 $dados = mysqli_fetch_array($resultado);
 
 function somarValoresReais($valor1, $valor2) {
@@ -34,8 +34,8 @@ $saldo = $entradaInicial + $dados['saldo'];
 echo '</br>' . $saldo;
 
 $inserirSaldo = "UPDATE tb_usuarios SET saldo = '$saldo'";
-if (mysqli_query($conexao, $inserirSaldo)) {
-    header("Location:". SITE ."painel/listagens.php");
+if (mysqli_query($conn, $inserirSaldo)) {
+    header("Location:". SITE ."listagens");
 } else {
     echo 'ERRO NO CADASTRO!!!';
 }
