@@ -12,8 +12,8 @@ $pago = $_POST['pago'];
 $cadastrar = "INSERT INTO tb_lancamentos (despesa, valor, data_lancamentos, pago) VALUES ('$despesa', '$valor','$data_despesa', '$pago')";
 
  
-if (mysqli_query($conexao, $cadastrar)) {
-  header("Location:". SITE ."painel/lancamentos.php");
+if (mysqli_query($conn, $cadastrar)) {
+  header("Location:". SITE ."lancamentos");
  }else{
     echo 'Erro ao cadastrar despesa!';
 }

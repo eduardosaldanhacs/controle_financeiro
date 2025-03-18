@@ -1,6 +1,6 @@
 <?php
 $buscar_lancamentos = "SELECT * from tb_lancamentos where id=$id";
-$resultado = mysqli_query($conexao, $buscar_lancamentos);
+$resultado = mysqli_query($conn, $buscar_lancamentos);
 $dados = mysqli_fetch_array($resultado); 
 ?>
 <div class="container">

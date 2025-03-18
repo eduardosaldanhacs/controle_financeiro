@@ -58,3 +58,8 @@
 
 .fs-7 { font-size: 0.75rem !important; } /* Aproximadamente 12px */
 .fs-8 { font-size: 0.625rem !important; } /* Aproximadamente 10px */
+
+
+.btn-add {
+    width: 150px;
+}

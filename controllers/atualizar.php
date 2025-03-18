@@ -9,8 +9,8 @@ $pago = $_POST['pago'];
 
 $atualizar_lancamentos = "UPDATE tb_lancamentos SET despesa = '$despesa', valor = '$valor', data_lancamentos = '$data', pago = '$pago' WHERE id = '$id'"; 
 
-if (mysqli_query($conexao, $atualizar_lancamentos)) {
-    header("Location:". SITE ."painel/listagens.php");
+if (mysqli_query($conn, $atualizar_lancamentos)) {
+    header("Location:". SITE ."listagens");
     exit;
 }else{
     echo 'ERRO NO CADASTRO!!!';

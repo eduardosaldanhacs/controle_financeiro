@@ -9,7 +9,7 @@ if (!isset($_SESSION['id'])) {
 $saldo = 0.00;
 
 $busca_nome = "SELECT * FROM tb_usuarios WHERE id = 2";
-$resultado = mysqli_query($conexao, $busca_nome);
+$resultado = mysqli_query($conn, $busca_nome);
 $dados = mysqli_fetch_array($resultado);
 
 $saldo = isset($dados['saldo']) ? $dados['saldo'] : 0.00;

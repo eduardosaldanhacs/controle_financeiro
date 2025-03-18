@@ -38,12 +38,12 @@ function converterFormatoEntrada($valor) {
 
 $id = $_POST['id'];
 $buscar_lancamentos = "SELECT * from tb_lancamentos where id=$id";
-$resultado = mysqli_query($conexao, $buscar_lancamentos);
+$resultado = mysqli_query($conn, $buscar_lancamentos);
 $dados = mysqli_fetch_array($resultado); 
 $valorFatura = $dados['valor'];
 
 $buscarSaldo = "SELECT saldo FROM tb_usuarios";
-$resultado2 = mysqli_query($conexao, $buscarSaldo);
+$resultado2 = mysqli_query($conn, $buscarSaldo);
 $dados2 = mysqli_fetch_array($resultado2);
 $saldo = $dados2['saldo'];
  
@@ -54,15 +54,15 @@ if ($dados['pago'] == 'S') {
     $pago = 'N';
     $saldoFinal = ($saldo + $valorFatura);
     $inserirSaldo = "UPDATE tb_usuarios SET saldo = '$saldoFinal'";
-    mysqli_query($conexao, $inserirSaldo);
+    mysqli_query($conn, $inserirSaldo);
 } else {
     $pago = 'S';
     $saldoFinal = ($saldo - $valorFatura);
     $inserirSaldo = "UPDATE tb_usuarios SET saldo = '$saldoFinal'";
-    mysqli_query($conexao, $inserirSaldo);
+    mysqli_query($conn, $inserirSaldo);
 }
 $sql = "UPDATE tb_lancamentos SET pago = '$pago' WHERE id = '$id'";
-$query = mysqli_query($conexao, $sql);
+$query = mysqli_query($conn, $sql);
 
 echo json_encode(['success' => true, 'inserirSaldo' => $inserirSaldo, 'pago' => $pago, 'saldoInicial' => $saldo, 'valorFatura' => $dados['valor']]); 
 

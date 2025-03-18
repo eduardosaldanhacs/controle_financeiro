@@ -27,7 +27,7 @@
                                 <input type="text" name="entrada" class="form-control mb-2" id="valorEntrada">
                             </div>
                             <div class="col-4 mt-4">
-                                <input type="submit" class="btn btn-outline-light"><i class="fa-solid fa-plus"></i>
+                                <input type="submit" class="btn btn-outline-success" value="Inserir"><i class="fa-solid fa-plus"></i>
                             </div>
                         </div>
                     </form>
@@ -40,7 +40,7 @@
                                 <input type="text" name="entrada" class="form-control mb-2" id="valorSaida">
                             </div>
                             <div class="col-4 mt-4">
-                                <input type="submit" class="btn btn-outline-light"><i class="fa-solid fa-minus"></i>
+                                <input type="submit" class="btn btn-outline-danger" value="Retirar"><i class="fa-solid fa-minus"></i>
                             </div>
                         </div>
                     </form>
