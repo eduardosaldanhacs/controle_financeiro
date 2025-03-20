@@ -29,7 +29,7 @@ $resultado = mysqli_query($conn, $buscar_despesas);
                 <a href="<?= SITE ?>cadastro_lancamentos" class="btn btn-success btn-add">Adicionar</a>
             </div>
         </div>
-        <form action="listagens.php" method="GET" class="d-flex justify-content-between align-items-center text-white">
+        <form action="<?= SITE ?>listagens" method="GET" class="d-flex justify-content-between align-items-center text-white">
             <div class="col-4">
                 <label for="" class="form-label text-white">Busca: </label>
                 <input type="text" name="nome" class="form-control mb-2" id="nome" placeholder="Busque pelo nome da despesa">
@@ -79,7 +79,7 @@ $resultado = mysqli_query($conn, $buscar_despesas);
                 if ($diferencaDias <= 15) {
                     $classeAtraso = 'bg-default'; // Não atrasado
                 } elseif ($diferencaDias > 15 && $diferencaDias <= 30) {
-                    $classeAtraso = 'bg-warning'; // Amarelo
+                    $classeAtraso = 'bg-yellow'; // Amarelo
                 } else {
                     $classeAtraso = 'bg-red'; // Vermelho
                 }
@@ -90,7 +90,7 @@ $resultado = mysqli_query($conn, $buscar_despesas);
                 $checkbox = 'checked';
                 $classeAtraso = 'bg-green';
             } else {
-                $classeAtraso = 'bg-default';
+                //$classeAtraso = 'bg-default';
                 $checkbox = '';
             }
         ?>
@@ -107,7 +107,7 @@ $resultado = mysqli_query($conn, $buscar_despesas);
                         <?php echo converterYMDparaDMY($despesa['data_lancamentos']) ?>
                     </div>
                     <div class="col-2">
-                        <input type="checkbox" class="checkbox-grande checkbox-pago" data-user=<?= $_SESSION['id'] ?> data-id="<?= $despesa['id'] ?>" <?= $checkbox ?>>
+                        <input type="checkbox" class="checkbox-grande checkbox-pago" data-user=<?= $_SESSION['id'] ?> data-id="<?= $despesa['id'] ?>" <?= $checkbox ?> onclick="refreshWithDelay()">
                     </div>
                     <div class="col-3">
                         <a href="editar.php?id=<?= $despesa['id'] ?>"><button type="submit" class="btn btn-secondary btn-sm bg-success">Editar</button></a>
