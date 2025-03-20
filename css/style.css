@@ -23,6 +23,7 @@
 }
 
 .checkbox-grande {
+    accent-color: green;
     transform: scale(1.5) !important; /* Aumenta o tamanho da checkbox em 1.5x */
     -webkit-transform: scale(1.5) !important; /* Para compatibilidade com navegadores antigos */
 }
@@ -68,13 +69,16 @@
 }
 
 .bg-green {
-    background-color: #28a745;  
+    /* background-color: #28a745;  */
+    background-color: #6ddb86;  
 }
 
 .bg-red {
-    background-color: #dc3545 ;
+    /* background-color: #dc3545 ; */
+    background-color: #ff5c6c;
 }
 
 .bg-yellow {
-    background-color: #ffc107;
+    /* background-color: #ffc107; */
+    background-color: #ffd455;
 }
