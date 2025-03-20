@@ -58,7 +58,7 @@ $resultado = mysqli_query($conn, $buscar_despesas);
     </div>
 
     <ul class="row list-unstyled bg-light">
-        <li class="col-12 text-white bg-primary py-3 text-center border-bottom border-dark">
+        <li class="col-12 text-white bg-2 py-3 text-center border-bottom border-dark">
             <div class="d-flex justify-content-between">
                 <div class="col-3">Despesa</div>
                 <div class="col-2">Valor</div>
@@ -110,8 +110,8 @@ $resultado = mysqli_query($conn, $buscar_despesas);
                         <input type="checkbox" class="checkbox-grande checkbox-pago" data-user=<?= $_SESSION['id'] ?> data-id="<?= $despesa['id'] ?>" <?= $checkbox ?> onclick="refreshWithDelay()">
                     </div>
                     <div class="col-3">
-                        <a href="editar.php?id=<?= $despesa['id'] ?>"><button type="submit" class="btn btn-secondary btn-sm bg-success">Editar</button></a>
-                        <a href="exclusao.php?id=<?= $despesa['id'] ?>"><button type="submit" class="btn btn-secondary btn-sm bg-danger">Excluir</button></a>
+                        <a href="editar.php?id=<?= $despesa['id'] ?>" class="fs-4 text-secondary"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="exclusao.php?id=<?= $despesa['id'] ?>" class="fs-4 ms-3 text-danger"><i class="fa-solid fa-trash"></i></a>
                     </div>
                 </div>
             </li>

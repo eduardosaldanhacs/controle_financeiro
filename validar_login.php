@@ -1,22 +1,21 @@
-<?php 
-session_start(); 
+<?php
+session_start();
 
 include('includes/connect.php');
 include('define.php');
+include('includes/functions.php');
 
 $cpf = $_POST['cpf'] ?? '';
 $senha = $_POST['senha'] ?? '';
-
+print_r($_POST);
 if (empty($cpf)) {
-    $_SESSION['error']['message'] = "Preencha o campo CPF";
-    $_SESSION['error']['type'] = "danger";
+    alertMessage('Preencha o campo CPF', 'danger');
     header("Location: " . SITE);
     exit;
-} 
+}
 
 if (empty($senha)) {
-    $_SESSION['error']['message'] = "Preencha o campo Senha";
-    $_SESSION['error']['type'] = "danger";
+    alertMessage('Preencha o campo Senha', 'danger');
     header("Location: " . SITE);
     exit;
 }
@@ -28,22 +27,22 @@ $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     $dados = $result->fetch_assoc();
-    
+
     if (password_verify($senha, $dados['senha'])) {
         $_SESSION['id'] = $dados['id'];
         $_SESSION['cpf'] = $cpf;
-        $_SESSION['nome'] = $dados['nome']; 
-        
+        $_SESSION['nome'] = $dados['nome'];
+
+        alertMessage('Login efetuado com sucesso', 'success');
         header("Location: " . SITE . "home");
         exit;
     } else {
-        $_SESSION['error']['message'] = "Senha inválida";
+        alertMessage('Senha inválida', 'danger');
+        header("Location: " . SITE);
+        exit;
     }
 } else {
-    $_SESSION['error']['message'] = "Usuário ou senha inválidos";
+    alertMessage('Usuário ou senha inválidos', 'danger');
+    header("Location: " . SITE);
+    exit;
 }
-
-$_SESSION['error']['type'] = "danger";
-header("Location: " . SITE );
-exit;
-?>

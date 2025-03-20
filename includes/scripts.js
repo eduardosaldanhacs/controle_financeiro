@@ -1,25 +1,28 @@
 const saldoInput = document.getElementById('saldo');
 const toggleOlho = document.getElementById('toggle-olho');
 
-if (saldoInput && toggleOlho) {
-    let visivel = true;
-
-    if (visivel) {
-        saldoInput.type = 'text';
-        toggleOlho.src = 'https://img.icons8.com/?size=100&id=60022&format=png&color=FFFFFF';
-    }
-
-    toggleOlho.addEventListener('click', () => {
-        visivel = !visivel;
-        if (visivel) {
-            saldoInput.type = 'text';
-            toggleOlho.src = 'https://img.icons8.com/?size=100&id=60022&format=png&color=FFFFFF';
-        } else {
-            saldoInput.type = 'password';
-            toggleOlho.src = 'https://img.icons8.com/?size=100&id=59814&format=png&color=FFFFFF';
-        }
-    });
+function atualizarVisibilidade(visivel) {
+    saldoInput.type = visivel ? 'text' : 'password';
+    toggleOlho.src = `https://img.icons8.com/?size=100&id=${visivel ? '60022' : '59814'}&format=png&color=FFFFFF`;
 }
+
+// Buscar estado salvo na sessão ao carregar
+fetch('controllers/toggle_saldo.php')
+    .then(response => response.json())
+    .then(data => {
+        atualizarVisibilidade(data.saldo_visivel);
+    })
+    .catch(error => console.error('Erro ao carregar estado:', error));
+
+// Evento de clique para alternar estado
+toggleOlho.addEventListener('click', () => {
+    fetch('controllers/toggle_saldo.php', { method: 'POST' })
+        .then(response => response.json())
+        .then(data => {
+            atualizarVisibilidade(data.saldo_visivel);
+        })
+        .catch(error => console.error('Erro ao alternar estado:', error));
+});
 
 
 $(document).ready(function () {

@@ -1,5 +1,4 @@
 <?php
-    include('connect.php');
     function verificaLogin() {
         $_SESSION['id'] = isset($_SESSION['id']) ? $_SESSION['id'] : null;
         return isset($_SESSION['id']);
@@ -21,6 +20,11 @@
 
         // Retorna a data formatada no formato DMY (d/m/Y)
         return $data->format('d/m/Y');
+    }
+
+    function alertMessage($message, $type) {
+        $_SESSION['message']['text'] = $message;
+        $_SESSION['message']['type'] = $type;
     }
 
 ?>

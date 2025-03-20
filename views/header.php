@@ -6,13 +6,13 @@
                     <ul class="navbar-nav align-items-center">
                         <li class="nav-item">
                             <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>home">Home</a>
-                            <!-- <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE?>despesas">Despesas</a> -->
+                            <!-- <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>despesas">Despesas</a> -->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>lancamentos">Lançamentos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE?>despesas">Despesas</a>
+                            <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>despesas">Despesas</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>controllers/sair.php">Sair</a>
@@ -46,18 +46,30 @@
                     </form>
                 </div>
                 <div class="col-2">
-                    <label for="" class="form-label text-white">Saldo: </label>
+                    <label for="" class="form-label text-white">Saldo:</label>
                     <div class="d-flex align-items-center">
                         <?php
                         $saldo = isset($dados['saldo']) ? $dados['saldo'] : 0.00;
+                        $saldoVisivel = $_SESSION['saldo_visivel'] ?? false;
                         ?>
-                        <input type="password" id="saldo" class="form-control input-sensivel" value="R$ <?= formatarValorReais3($saldo); ?>" disabled>
-                        <img src="https://img.icons8.com/?size=100&id=60022&format=png&color=FFFFFF" alt="Exibir" id="toggle-olho" class="icone-olho">
+                        <input
+                            type="<?= $saldoVisivel ? 'text' : 'password' ?>"
+                            id="saldo"
+                            class="form-control input-sensivel"
+                            value="R$ <?= formatarValorReais3($saldo); ?>"
+                            disabled>
+                        <img
+                            src="https://img.icons8.com/?size=100&id=<?= $saldoVisivel ? '60022' : '59814' ?>&format=png&color=FFFFFF"
+                            alt="Exibir"
+                            id="toggle-olho"
+                            class="icone-olho">
                     </div>
                 </div>
+
 
 
             </div>
         </div>
     </nav>
 </header>
+<?php include_once('modulos/mensagem.php') ?>
