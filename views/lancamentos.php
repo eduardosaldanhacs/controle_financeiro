@@ -19,7 +19,7 @@ if (isset($_GET['data_inicio']) && isset($_GET['data_fim']) && !empty($_GET['dat
     $where .= " AND data_lancamentos BETWEEN '$data_inicio' AND '$data_fim'";
 }
 
-$buscar_despesas = "SELECT * FROM tb_lancamentos WHERE excluido IS NULL $where ORDER BY data_lancamentos DESC";
+echo $buscar_despesas = "SELECT * FROM tb_lancamentos WHERE excluido IS NULL $where ORDER BY data_lancamentos DESC";
 $resultado = mysqli_query($conn, $buscar_despesas);
 ?>
 <div class="container pt-5">
@@ -58,7 +58,7 @@ $resultado = mysqli_query($conn, $buscar_despesas);
     </div>
 
     <ul class="row list-unstyled bg-light">
-        <li class="col-12 text-white bg-primary py-3 text-center">
+        <li class="col-12 text-white bg-primary py-3 text-center border-bottom border-dark">
             <div class="d-flex justify-content-between">
                 <div class="col-3">Despesa</div>
                 <div class="col-2">Valor</div>
@@ -77,25 +77,25 @@ $resultado = mysqli_query($conn, $buscar_despesas);
 
             if ($dataLancamento < $dataAtual && ($pagamento == 'N' || $pagamento == null)) {
                 if ($diferencaDias <= 15) {
-                    $classeAtraso = 'alert-light'; // Não atrasado
+                    $classeAtraso = 'bg-default'; // Não atrasado
                 } elseif ($diferencaDias > 15 && $diferencaDias <= 30) {
-                    $classeAtraso = 'alert-warning'; // Amarelo
+                    $classeAtraso = 'bg-warning'; // Amarelo
                 } else {
-                    $classeAtraso = 'alert-danger'; // Vermelho
+                    $classeAtraso = 'bg-red'; // Vermelho
                 }
             } else {
-                $classeAtraso = 'alert-light'; // Não atrasado
+                $classeAtraso = 'bg-default'; // Não atrasado
             }
             if ($despesa['pago'] == strtoupper('S')) {
-                $pago = 'alert alert-success';
                 $checkbox = 'checked';
-                $classeAtraso = '';
+                $classeAtraso = 'bg-green';
             } else {
+                $classeAtraso = 'bg-default';
                 $checkbox = '';
             }
         ?>
             <li class="col-12 text-center">
-                <div class="row justify-content-between align-items-center mb-0 py-3 border alert <?= $classeAtraso ?> <? if(isset($pago)) { echo $pago; } ?>">
+                <div class="row justify-content-between align-items-center mb-0 py-3 border-bottom border-dark <?= $classeAtraso ?> <?php if(isset($pago)) { echo $pago; } ?>">
                     <div class="col-3">
                         <?php echo $despesa['despesa'] ?>
                     </div>
@@ -107,7 +107,7 @@ $resultado = mysqli_query($conn, $buscar_despesas);
                         <?php echo converterYMDparaDMY($despesa['data_lancamentos']) ?>
                     </div>
                     <div class="col-2">
-                        <input type="checkbox" class="checkbox-grande checkbox-pago" data-id="<?= $despesa['id'] ?>" <?= $checkbox ?> onclick="refreshWithDelay()">
+                        <input type="checkbox" class="checkbox-grande checkbox-pago" data-user=<?= $_SESSION['id'] ?> data-id="<?= $despesa['id'] ?>" <?= $checkbox ?>>
                     </div>
                     <div class="col-3">
                         <a href="editar.php?id=<?= $despesa['id'] ?>"><button type="submit" class="btn btn-secondary btn-sm bg-success">Editar</button></a>

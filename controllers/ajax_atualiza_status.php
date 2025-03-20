@@ -1,6 +1,5 @@
 <?php
-
-
+ob_start();
 include('../includes/connect.php');
 include('../define.php');
 $saldoFinal = 0;
@@ -36,7 +35,9 @@ function converterFormatoEntrada($valor) {
     return $valor;
 }
 
+
 $id = $_POST['id'];
+
 $buscar_lancamentos = "SELECT * from tb_lancamentos where id=$id";
 $resultado = mysqli_query($conn, $buscar_lancamentos);
 $dados = mysqli_fetch_array($resultado); 
@@ -64,6 +65,25 @@ if ($dados['pago'] == 'S') {
 $sql = "UPDATE tb_lancamentos SET pago = '$pago' WHERE id = '$id'";
 $query = mysqli_query($conn, $sql);
 
-echo json_encode(['success' => true, 'inserirSaldo' => $inserirSaldo, 'pago' => $pago, 'saldoInicial' => $saldo, 'valorFatura' => $dados['valor']]); 
+// echo json_encode([
+//     'success' => true, 
+//     'inserirSaldo' => $inserirSaldo, 
+//     'pago' => $pago, 
+//     'saldoInicial' => $saldo, 
+//     'valorFatura' => $dados['valor']]); 
 
- 
+
+ob_end_clean(); // Limpa qualquer saída anterior
+header('Content-Type: application/json; charset=UTF-8'); // Define que a resposta será JSON
+
+echo json_encode([
+    'success' => true,
+    'inserirSaldo' => $inserirSaldo,
+    'pago' => $pago,
+    'saldoInicial' => $saldo,
+    'valorFatura' => $dados['valor']
+]);
+
+exit; // Garante que nada mais será enviado
+
+

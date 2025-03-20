@@ -31,7 +31,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#valorSaida').mask('000.000.000,00', {
         reverse: true
-    });
+    }); 
 });
 
 $(document).ready(function () {
@@ -72,13 +72,15 @@ $(document).ready(function () {
 });
 
 
+
+
 $(document).ready(function () {
     // Lógica para a checkbox de pagamento
     $('.checkbox-pago').on('change', function () {
         const parentRow = $(this).closest('.row');
         const isChecked = $(this).is(':checked');
         const id = $(this).data('id'); // Captura o ID do atributo data-id
-
+        const user = $(this).data('user'); // Captura o ID do atributo data-user
         // Atualizar estilos da linha
         if (isChecked) {
             parentRow.removeClass('alert-danger alert-light'); // Remove as cores anteriores
@@ -95,10 +97,11 @@ $(document).ready(function () {
 
         // Chamada AJAX para atualizar o status
         $.ajax({
-            url: 'ajax_atualiza_status.php', 
+            url: 'http://localhost/sistema_financeiro/controllers/ajax_atualiza_status.php', 
             method: 'POST',
             data: {
                 id: id,
+                user_id: user,
                 status: isChecked ? 'pago' : 'pendente'
             },
             success: function (response) {
@@ -138,7 +141,7 @@ $(document).ready(function () {
             }
 
             $.ajax({
-                url: 'ajax_atualiza_valor.php',
+                url: 'controllers/ajax_atualiza_valor.php',
                 method: 'POST',
                 data: {
                     id: idDespesa,
@@ -162,6 +165,3 @@ $(document).ready(function () {
         });
     });
 });
-
-
-

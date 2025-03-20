@@ -37,10 +37,10 @@ if ($result->num_rows > 0) {
         header("Location: " . SITE . "home");
         exit;
     } else {
-        $_SESSION['error']['message'] = "Senha inválida";
+        $_SESSION['error']['message'] = "Senha invï¿½lida";
     }
 } else {
-    $_SESSION['error']['message'] = "Usuário ou senha inválidos";
+    $_SESSION['error']['message'] = "Usuï¿½rio ou senha invï¿½lidos";
 }
 
 $_SESSION['error']['type'] = "danger";
