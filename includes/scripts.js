@@ -49,11 +49,11 @@ $(document).ready(function () {
         const parentRow = $(this).closest('.row');
         if ($(this).is(':checked')) {
             parentRow.addClass('checked-bg');
-            parentRow.removeClass('bg-black');
+            parentRow.removeClass('bg-default');
 
         } else {
             parentRow.removeClass('checked-bg');
-            parentRow.addClass('bg-black');
+            parentRow.addClass('bg-default');
         }
     });
 });
@@ -84,14 +84,14 @@ $(document).ready(function () {
         // Atualizar estilos da linha
         if (isChecked) {
             parentRow.removeClass('alert-danger alert-light'); // Remove as cores anteriores
-            parentRow.addClass('alert-success'); // Adiciona a cor verde
+            parentRow.addClass('bg-green'); // Adiciona a cor verde
         } else {
             const isAtrasado = parentRow.hasClass('alert-danger');
-            parentRow.removeClass('alert-success'); // Remove a cor verde
+            parentRow.removeClass('bg-green'); // Remove a cor verde
             if (isAtrasado) {
-                parentRow.addClass('alert-danger'); // Volta para vermelho se atrasado
+                parentRow.addClass('bg-danger'); // Volta para vermelho se atrasado
             } else {
-                parentRow.addClass('alert-light'); // Volta para preto se não atrasado
+                parentRow.addClass('bg-default'); // Volta para preto se não atrasado
             }
         }
 
