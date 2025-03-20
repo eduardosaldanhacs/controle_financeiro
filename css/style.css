@@ -63,3 +63,14 @@
 .btn-add {
     width: 150px;
 }
+.bg-default {
+    background-color:#d1e7dd;
+}
+
+.bg-green {
+    background-color: #28a745;  
+}
+
+.bg-red {
+    background-color: #dc3545 ;
+}
