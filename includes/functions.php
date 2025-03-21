@@ -1,4 +1,5 @@
 <?php
+    session_start();
     function verificaLogin() {
         $_SESSION['id'] = isset($_SESSION['id']) ? $_SESSION['id'] : null;
         return isset($_SESSION['id']);
@@ -25,6 +26,11 @@
     function alertMessage($message, $type) {
         $_SESSION['message']['text'] = $message;
         $_SESSION['message']['type'] = $type;
+    }
+
+    function formataData($date) {
+        $date = DateTime::createFromFormat('Y-m-d H:i:s', $date)->format('d/m/Y');
+        return $date;
     }
 
 ?>

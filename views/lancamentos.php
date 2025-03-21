@@ -19,10 +19,10 @@ if (isset($_GET['data_inicio']) && isset($_GET['data_fim']) && !empty($_GET['dat
     $where .= " AND data_lancamentos BETWEEN '$data_inicio' AND '$data_fim'";
 }
 
-echo $buscar_despesas = "SELECT * FROM tb_lancamentos WHERE excluido IS NULL $where ORDER BY data_lancamentos DESC";
+$buscar_despesas = "SELECT * FROM tb_lancamentos WHERE excluido IS NULL $where ORDER BY data_lancamentos DESC";
 $resultado = mysqli_query($conn, $buscar_despesas);
 ?>
-<div class="container">
+<div class="container pt-2">
     <div class="row">
         <div class="col-12">
             <div class="d-flex justify-content-end pb-3">
@@ -60,11 +60,11 @@ $resultado = mysqli_query($conn, $buscar_despesas);
     <ul class="row list-unstyled bg-light">
         <li class="col-12 text-white bg-2 py-3 text-center border-bottom border-dark">
             <div class="d-flex justify-content-between">
-                <div class="col-3">Despesa</div>
+                <div class="col-4">Despesa</div>
                 <div class="col-2">Valor</div>
                 <div class="col-2">Data de Lançamento</div>
                 <div class="col-2">Pago</div>
-                <div class="col-3">Ações</div>
+                <div class="col-2">Ações</div>
             </div>
         </li>
         <?php
@@ -96,7 +96,7 @@ $resultado = mysqli_query($conn, $buscar_despesas);
         ?>
             <li class="col-12 text-center">
                 <div class="row justify-content-between align-items-center mb-0 py-3 border-bottom border-dark <?= $classeAtraso ?> <?php if(isset($pago)) { echo $pago; } ?>">
-                    <div class="col-3">
+                    <div class="col-4">
                         <?php echo $despesa['despesa'] ?>
                     </div>
     
@@ -109,9 +109,9 @@ $resultado = mysqli_query($conn, $buscar_despesas);
                     <div class="col-2">
                         <input type="checkbox" class="checkbox-grande checkbox-pago" data-user=<?= $_SESSION['id'] ?> data-id="<?= $despesa['id'] ?>" <?= $checkbox ?> onclick="refreshWithDelay()">
                     </div>
-                    <div class="col-3">
-                        <a href="editar.php?id=<?= $despesa['id'] ?>" class="fs-4 text-secondary"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a href="exclusao.php?id=<?= $despesa['id'] ?>" class="fs-4 ms-3 text-danger"><i class="fa-solid fa-trash"></i></a>
+                    <div class="col-2">
+                        <a href="<?= SITE ?>cadastro_lancamentos&cod=<?= $despesa['id'] ?>" class="fs-4 text-secondary"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="<?= SITE ?>controllers/excluir_lancamentos.php?id=<?= $despesa['id'] ?>" class="fs-4 ms-3 text-danger"><i class="fa-solid fa-trash"></i></a>
                     </div>
                 </div>
             </li>
