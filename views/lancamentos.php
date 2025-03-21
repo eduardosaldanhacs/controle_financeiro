@@ -22,7 +22,7 @@ if (isset($_GET['data_inicio']) && isset($_GET['data_fim']) && !empty($_GET['dat
 echo $buscar_despesas = "SELECT * FROM tb_lancamentos WHERE excluido IS NULL $where ORDER BY data_lancamentos DESC";
 $resultado = mysqli_query($conn, $buscar_despesas);
 ?>
-<div class="container pt-5">
+<div class="container">
     <div class="row">
         <div class="col-12">
             <div class="d-flex justify-content-end pb-3">
