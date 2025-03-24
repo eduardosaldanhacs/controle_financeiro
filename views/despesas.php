@@ -6,15 +6,10 @@ if (isset($_GET['nome']) && !empty($_GET['nome'])) {
     $where .= " AND despesa LIKE '%$nome%'";
 }
 
-if (isset($_GET['pago']) && !empty($_GET['pago'])) {
-    $pago = htmlspecialchars($_GET['pago']); 
-    $where .= " AND pago = '$pago'";
-}
-
 if (isset($_GET['data_inicio']) && isset($_GET['data_fim']) && !empty($_GET['data_inicio']) && !empty($_GET['data_fim'])) {
     $data_inicio = htmlspecialchars($_GET['data_inicio']); 
     $data_fim = htmlspecialchars($_GET['data_fim']); 
-    $where .= " AND data_lancamentos BETWEEN '$data_inicio' AND '$data_fim'";
+    $where .= " AND data_cadastro BETWEEN '$data_inicio' AND '$data_fim'";
 }
 
 $buscar_despesas = "SELECT * FROM tb_despesas WHERE excluido IS NULL $where ORDER BY id DESC";
@@ -27,17 +22,17 @@ $resultado = mysqli_query($conn, $buscar_despesas);
                 <a href="<?= SITE ?>cadastro_despesas" class="btn btn-success btn-add">Adicionar</a>
             </div>
         </div>
-        <form action="listagens.php" method="GET" class="d-flex align-items-center text-white">
+        <form action="<?= SITE ?>despesas" method="GET" class="d-flex align-items-center text-white">
             <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12">
                 <label for="" class="form-label text-white">Busca: </label>
-                <input type="text" name="nome" class="form-control mb-2" id="nome" placeholder="Busque pelo nome da despesa">
+                <input type="text" name="nome" class="form-control mb-2" id="nome" placeholder="Busque pelo nome da despesa" value="<?php echo isset($_GET['nome']) ? $_GET['nome'] : ''; ?>">
             </div>
             <div class="col-4 ms-3">
                 <label for="" class="form-label text-white">Data de Cadastro: </label>
                 <i>(data inicio - fim)</i>
                 <div class="input-group">
-                    <input type="date" name="data_inicio" class="form-control mb-2" id="data-inicio">
-                    <input type="date" name="data_fim" class="form-control mb-2" id="data-fim">
+                    <input type="date" name="data_inicio" class="form-control mb-2" id="data-inicio" value="<?php echo isset($_GET['data_inicio']) ? $_GET['data_inicio'] : ''; ?>">
+                    <input type="date" name="data_fim" class="form-control mb-2" id="data-fim" value="<?php echo isset($_GET['data_fim']) ? $_GET['data_fim'] : ''; ?>">
                 </div>
             </div>
             <div class="col-1 mt-4 text-white ms-3">

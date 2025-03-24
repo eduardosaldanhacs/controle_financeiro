@@ -34,7 +34,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#valorSaida').mask('000.000.000,00', {
         reverse: true
-    }); 
+    });
 });
 
 $(document).ready(function () {
@@ -43,8 +43,8 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready(function() {
-    $('#cpf').mask('000.000.000-00', {reverse: true});
+$(document).ready(function () {
+    $('#cpf').mask('000.000.000-00', { reverse: true });
 });
 
 $(document).ready(function () {
@@ -69,13 +69,13 @@ function refreshWithDelay() {
 
 
 $(document).ready(function () {
-    $("#teste").click(function () {
-        alert("jQuery está funcionando!");
-    });
+
+    console.log("jQuery está funcionando!");
+
 });
 
 
-
+console.log('teste');
 
 $(document).ready(function () {
     // Lógica para a checkbox de pagamento
@@ -100,7 +100,7 @@ $(document).ready(function () {
 
         // Chamada AJAX para atualizar o status
         $.ajax({
-            url: 'http://localhost/sistema_financeiro/controllers/ajax_atualiza_status.php', 
+            url: 'http://localhost/sistema_financeiro/controllers/ajax_atualiza_status.php',
             method: 'POST',
             data: {
                 id: id,

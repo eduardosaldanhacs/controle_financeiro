@@ -29,26 +29,26 @@ $resultado = mysqli_query($conn, $buscar_despesas);
                 <a href="<?= SITE ?>cadastro_lancamentos" class="btn btn-success btn-add">Adicionar</a>
             </div>
         </div>
-        <form action="<?= SITE ?>listagens" method="GET" class="d-flex justify-content-between align-items-center text-white">
+        <form action="<?= SITE ?>lancamentos" method="GET" class="d-flex justify-content-between align-items-center text-white">
             <div class="col-4">
                 <label for="" class="form-label text-white">Busca: </label>
-                <input type="text" name="nome" class="form-control mb-2" id="nome" placeholder="Busque pelo nome da despesa">
+                <input type="text" name="nome" class="form-control mb-2" id="nome" placeholder="Busque pelo nome da despesa" value="<?php echo isset($_GET['nome']) ? $_GET['nome'] : ''; ?>">
             </div>
             <div class="col-2">
                 <label for="" class="form-label text-white">Tipos: </label>
                 <select name="pago" id="" class="form-select mb-2">
-                    <option value="">Escolha...</option>
-                    <option value="N">Não Pago</option>
-                    <option value="S">Pago</option>
-                    <option value="">Atrasados</option>
+                    <option value="" selected>Escolha...</option>
+                    <option value="N" <?= isset($_GET['pago']) && $_GET['pago'] == 'N' ? 'selected' : ''; ?>>Não Pago</option>
+                    <option value="S" <?= isset($_GET['pago']) && $_GET['pago'] == 'S' ? 'selected' : ''; ?>>Pago</option>
+                    <option value="" <?= isset($_GET['pago']) && $_GET['pago'] == 'A' ? 'selected' : ''; ?>>Atrasados</option>
                 </select>
             </div>
             <div class="col-4">
                 <label for="" class="form-label text-white">Data de Vencimento: </label>
                 <i>(data inicio - fim)</i>
                 <div class="input-group">
-                    <input type="date" name="data_inicio" class="form-control mb-2" id="data-inicio">
-                    <input type="date" name="data_fim" class="form-control mb-2" id="data-fim">
+                    <input type="date" name="data_inicio" class="form-control mb-2" id="data-inicio" value="<?php echo isset($_GET['data_inicio']) ? $_GET['data_inicio'] : ''; ?>">
+                    <input type="date" name="data_fim" class="form-control mb-2" id="data-fim" value="<?php echo isset($_GET['data_fim']) ? $_GET['data_fim'] : ''; ?>">
                 </div>
             </div>
             <div class="col-1 mt-4 text-white">

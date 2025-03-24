@@ -1,6 +1,5 @@
 <?php
-include('../includes/connect.php');
-include('../define.php');
+include('../includes/essenciais.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = trim($_POST['nome']);

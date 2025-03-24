@@ -1,18 +1,8 @@
 <?php 
-include('../includes/connect.php');
-include('../define.php');
+include('../includes/essenciais.php');
 $entradaInicial = $_POST['entrada'];
 $totalEntrada = $_POST['entrada'];
-function obterPrimeiroEUltimoDiaMesAtual() {
-    // Primeiro dia do mês atual
-    $firstday = new DateTime('first day of this month');
-    $lastday = new DateTime('last day of this month');
-    
-    return [
-        'primeiro_dia' => $firstday->format('Y-m-d'),
-        'ultimo_dia' => $lastday->format('Y-m-d')
-    ];
-}
+
 
 $resultado = obterPrimeiroEUltimoDiaMesAtual();
 

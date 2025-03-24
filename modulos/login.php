@@ -36,10 +36,10 @@ include('../includes/functions.php');
 <?php print_r($_SESSION);
 
 ?>
+
 <body class="bg-1" onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
     <div class="container">
         <?php if ((isset($_SESSION['message'])) != NULL) :
-            echo 'teste';
             $message_text = $_SESSION['message']['text'];
             $message_type = $_SESSION['message']['type'];
         ?>
@@ -95,3 +95,12 @@ include('../includes/functions.php');
     <?php
     include("rodape.php")
     ?>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#cpf').mask('000.000.000-00', {
+                reverse: false
+            });
+        });
+    </script>

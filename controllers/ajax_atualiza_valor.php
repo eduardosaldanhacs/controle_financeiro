@@ -1,6 +1,5 @@
 <?php
-include('../includes/connect.php');
-include('../define.php');
+include('../includes/essenciais.php');
 // Valida as entradas
 $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
 $valor = filter_input(INPUT_POST, 'valor', FILTER_SANITIZE_STRING); // Recebe o valor como string primeiro

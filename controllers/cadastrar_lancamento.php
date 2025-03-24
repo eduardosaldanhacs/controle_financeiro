@@ -1,7 +1,6 @@
 <?php 
 // print_r($_POST);
-include('../includes/connect.php');
-include('../define.php');
+include('../includes/essenciais.php');
 $despesa = $_POST['despesa'];
 $valor = $_POST['valor'];
 $data_despesa = $_POST['data'];
@@ -13,9 +12,13 @@ $cadastrar = "INSERT INTO tb_lancamentos (despesa, valor, data_lancamentos, pago
 
  
 if (mysqli_query($conn, $cadastrar)) {
+  alertMessage('Despesa cadastrada com sucesso!', 'success');
   header("Location:". SITE ."lancamentos");
+  exit;
  }else{
-    echo 'Erro ao cadastrar despesa!';
+    alertMessage('Erro ao cadastrar despesa!', 'danger');
+    header("Location:". SITE ."lancamentos");
+    exit;
 }
 ?>
 

@@ -1,9 +1,5 @@
 <?php 
-
-include('../includes/connect.php');
-include('../define.php');
-include('../includes/functions.php');
-
+include('../includes/essenciais.php');
 
 alertMessage('Sessão encerrada com sucesso', 'success');
 header("Location:". SITE);

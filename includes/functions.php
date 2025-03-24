@@ -23,6 +23,52 @@
         return $data->format('d/m/Y');
     }
 
+    function somarValoresReais($valor1, $valor2) {
+        // Converte o formato brasileiro para formato numérico padrão (ponto como separador decimal)
+        $numero1 = floatval(str_replace(',', '.', str_replace('.', '', $valor1)));
+        $numero2 = floatval(str_replace(',', '.', str_replace('.', '', $valor2)));
+        
+        $soma = $numero1 + $numero2;
+        
+        // Retorna o resultado formatado no padrão brasileiro
+        return number_format($soma, 2, '.', '');
+    }
+    
+    function converterFormatoEntrada($valor) {
+        // Remove o ponto usado como separador de milhar e substitui a vírgula pelo ponto
+        $valor = str_replace('.', '', $valor);
+        $valor = str_replace(',', '.', $valor);
+        return $valor;
+    }
+
+    function obterPrimeiroEUltimoDiaMesAtual() {
+        // Primeiro dia do mês atual
+        $firstday = new DateTime('first day of this month');
+        $lastday = new DateTime('last day of this month');
+        
+        return [
+            'primeiro_dia' => $firstday->format('Y-m-d'),
+            'ultimo_dia' => $lastday->format('Y-m-d')
+        ];
+    }
+
+   
+    
+    function subtraiValoresReais($valor1, $valor2) {
+        // Converte o formato brasileiro para formato numérico padrão (ponto como separador decimal)
+        $numero1 = floatval(str_replace(',', '.', str_replace('.', '', $valor1)));
+        $numero2 = floatval(str_replace(',', '.', str_replace('.', '', $valor2)));
+        
+        // Realiza a soma
+        $soma = $numero1 - $numero2;
+        
+        // Retorna o resultado formatado no padrão brasileiro
+        return number_format($soma, 2, '.', '');
+    }
+    
+   
+
+
     function alertMessage($message, $type) {
         $_SESSION['message']['text'] = $message;
         $_SESSION['message']['type'] = $type;

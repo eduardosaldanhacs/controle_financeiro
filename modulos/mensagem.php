@@ -1,6 +1,5 @@
 
 <?php if ((isset($_SESSION['message'])) != NULL) :
-    echo 'teste';
     $message_text = $_SESSION['message']['text'];
     $message_type = $_SESSION['message']['type'];
 ?>

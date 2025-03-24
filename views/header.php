@@ -9,11 +9,13 @@
                             <!-- <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>despesas">Despesas</a> -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>lancamentos">Lançamentos</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>despesas">Despesas</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>lancamentos">Lançamentos</a>
+                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>controllers/sair.php">Sair</a>
                         </li>
