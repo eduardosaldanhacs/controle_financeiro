@@ -6,7 +6,7 @@ $valor = $_POST['valor'];
 $data = $_POST['data'];
 $pago = $_POST['pago'];
 
-echo $atualizar_lancamentos = "UPDATE tb_lancamentos SET despesa = '$despesa', valor = '$valor', data_lancamentos = '$data', pago = '$pago'  WHERE id = '$id'"; 
+echo $atualizar_lancamentos = "UPDATE tb_despesas SET despesa = '$despesa', valor = '$valor', data_cadastro = '$data', pago = '$pago'  WHERE id = '$id'"; 
 
 if (mysqli_query($conn, $atualizar_lancamentos)) {
     alertMessage('Despesa atualizada com sucesso!', 'success');

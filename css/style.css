@@ -14,13 +14,10 @@
     background: rgb(11, 9, 46);
 }
 
-<<<<<<< HEAD
-=======
 .border-2 {
     border: 2px solid rgb(11, 9, 46); 
 }
 
->>>>>>> 010
 .cor1{
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); 

@@ -1,6 +1,5 @@
 <?php
-include('includes/connect.php');
-include('includes/define.php');
+include('includes/essenciais.php');
 $id = isset($_GET['id']) ? $_GET['id'] : null;
 
 if (!isset($_SESSION['id'])) {
@@ -19,7 +18,6 @@ $saldo = isset($dados['saldo']) ? $dados['saldo'] : 0.00;
 <head>
     <?php
     include("includes/links.php");
-    include("includes/functions.php");
     ?>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">

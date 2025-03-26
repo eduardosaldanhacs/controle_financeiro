@@ -7,7 +7,7 @@ $saldoFinal = 0;
 
 $id = $_POST['id'];
 
-$buscar_lancamentos = "SELECT * from tb_lancamentos where id=$id";
+$buscar_lancamentos = "SELECT * from tb_despesas where id=$id";
 $resultado = mysqli_query($conn, $buscar_lancamentos);
 $dados = mysqli_fetch_array($resultado); 
 $valorFatura = $dados['valor'];
@@ -31,7 +31,7 @@ if ($dados['pago'] == 'S') {
     $inserirSaldo = "UPDATE tb_usuarios SET saldo = '$saldoFinal'";
     mysqli_query($conn, $inserirSaldo);
 }
-$sql = "UPDATE tb_lancamentos SET pago = '$pago' WHERE id = '$id'";
+$sql = "UPDATE tb_despesas SET pago = '$pago' WHERE id = '$id'";
 $query = mysqli_query($conn, $sql);
 
 // echo json_encode([

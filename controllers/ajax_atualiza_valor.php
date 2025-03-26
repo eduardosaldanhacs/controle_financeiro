@@ -18,7 +18,7 @@ if ($id === null || $valor === null) {
 }
 
 
-$stmt = $conn->prepare("UPDATE tb_lancamentos SET valor = ? WHERE id = ?");
+$stmt = $conn->prepare("UPDATE tb_despesas SET valor = ? WHERE id = ?");
 $stmt->bind_param("di", $valor, $id); // d = double (float), i = integer
 
 if ($stmt->execute()) {

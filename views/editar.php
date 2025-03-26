@@ -1,5 +1,5 @@
 <?php
-$buscar_lancamentos = "SELECT * from tb_lancamentos where id=$id";
+$buscar_lancamentos = "SELECT * from tb_despesas where id=$id";
 $resultado = mysqli_query($conn, $buscar_lancamentos);
 $dados = mysqli_fetch_array($resultado); 
 ?>
@@ -24,7 +24,7 @@ $dados = mysqli_fetch_array($resultado);
                     <label for="" class="form-label">
                         Data de Lançamento
                     </label>
-                    <input type="date" name="data" class="form-control mb-2" required id="data" maxlength='3' value="<?php echo $dados['data_lancamentos']; ?>">
+                    <input type="date" name="data" class="form-control mb-2" required id="data" maxlength='3' value="<?php echo $dados['data_cadastro']; ?>">
                 </div>
                 <div>
                     <label for="" class="form-label">Pago</label>

@@ -1,7 +1,5 @@
 <?php
-include('includes/connect.php');
-include('define.php');
-include('includes/functions.php');
+include('includes/essenciais.php');
 
 $cpf = $_POST['cpf'] ?? '';
 $senha = $_POST['senha'] ?? '';

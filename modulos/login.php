@@ -1,8 +1,5 @@
 <?php
-include('../includes/connect.php');
-include('../define.php');
-include('../includes/functions.php');
-
+include('../includes/essenciais.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

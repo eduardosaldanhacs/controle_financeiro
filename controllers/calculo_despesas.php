@@ -10,7 +10,7 @@ $primeiroDia = $resultado['primeiro_dia'];
 $ultimoDia = $resultado['ultimo_dia'];
 
 
-$buscar_despesas = "SELECT * FROM tb_lancamentos WHERE data_lancamentos BETWEEN '$primeiroDia' AND '$ultimoDia'";
+$buscar_despesas = "SELECT * FROM tb_despesas WHERE data_cadastro BETWEEN '$primeiroDia' AND '$ultimoDia'";
 $resultado = mysqli_query($conn, $buscar_despesas);
 while ($despesa = mysqli_fetch_array($resultado)) {
     $despesaAtual = number_format((float)$despesa['valor'], 2, '.', ',');

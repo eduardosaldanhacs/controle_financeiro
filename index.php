@@ -4,24 +4,39 @@ if (verificaLogin()) {
     $pag = isset($_GET['a']) ? $_GET['a'] : 'home';
     //echo $pag;
     include('views/header.php');
-    switch ($pag) {                
+    switch ($pag) {
         case 'cadastro':
             include('views/cadastro.php');
-            break;    
-        case 'cadastro_despesas';
-            include('views/cadastro_despesas.php');
+            break;
+        case 'receitas':
+            include('views/receitas.php');
+            break;
+        case 'cadastro_receitas':
+            include('views/cadastro_receitas.php');
+            break;
+        case "cadastro_receitas&cod='{$_GET['b']}'":
+            include("views/cadastro_receitas.php?id={$_GET['b']}'");
+            break;
+        case 'tipos_de_receitas':
+            include('views/tipos_de_receitas.php');
+            break;
+        case 'listar_tipos_de_receitas':
+            include('views/listar_tipos_de_receitas.php');
             break;
         case 'despesas':
             include('views/despesas.php');
             break;
-        case 'cadastro_lancamentos':
-            include('views/cadastro_lancamentos.php');
+        case 'cadastro_despesas';
+            include('views/cadastro_despesas.php');
             break;
         case "cadastro_despesas&cod='{$_GET['b']}'":
             include("views/cadastro_despesas.php?id={$_GET['b']}'");
             break;
-        case 'lancamentos':
-            include('views/lancamentos.php');
+        case 'tipos_de_despesas';
+            include('views/tipos_de_despesas.php');
+            break;
+        case 'listar_tipos_de_despesas';
+            include('views/listar_tipos_de_despesas.php');
             break;
         case 'editar':
             include('views/editar.php');

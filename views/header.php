@@ -2,26 +2,22 @@
     <nav class="navbar navbar-expand-lg bg-2 border-bottom">
         <div class="container-fluid px-xxl-5 px-xl-5 px-lg-5 px-md-5 px-sm-3">
             <div class="collapse navbar-collapse row" id="navbarNav">
-                <div class="col-4">
+                <div class="col-9">
                     <ul class="navbar-nav align-items-center">
                         <li class="nav-item">
                             <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>home">Home</a>
                             <!-- <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>despesas">Despesas</a> -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>despesas">Despesas</a>
+                            <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>receitas">Receitas</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>lancamentos">Lançamentos</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>controllers/sair.php">Sair</a>
+                            <a class="nav-link active text-white fs-6 pb-1" aria-current="page" href="<?= SITE ?>despesas">Despesas</a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-3">
+                <!-- <div class="col-3">
                     <form action="<?php SITE ?>controllers/inserir_entrada.php" method="POST">
                         <div class="row align-items-center">
                             <div class="col-6">
@@ -50,7 +46,7 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                </div> -->
                 <div class="col-2">
                     <label for="" class="form-label text-white">Saldo:</label>
                     <div class="d-flex align-items-center">
@@ -71,7 +67,9 @@
                             class="icone-olho">
                     </div>
                 </div>
-
+                <div class="col-1 text-center">
+                        <a class="nav-link active text-white fs-6 w-100 bg-danger rounded-pill py-1" aria-current="page" href="<?= SITE ?>controllers/sair.php">Sair</a>
+                </div>
 
 
             </div>
