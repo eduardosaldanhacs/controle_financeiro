@@ -1,6 +1,5 @@
 <?php
 $where = ''; // Inicializa o filtro
-
 if (isset($_GET['nome']) && !empty($_GET['nome'])) {
     $nome = htmlspecialchars($_GET['nome']);
     $where .= " AND receita LIKE '%$nome%'";
@@ -12,7 +11,7 @@ if (isset($_GET['data_inicio']) && isset($_GET['data_fim']) && !empty($_GET['dat
     $where .= " AND data_cadastro BETWEEN '$data_inicio' AND '$data_fim'";
 }
 
-$buscar_receitas = "SELECT * FROM tb_receitas WHERE excluido IS NULL $where ORDER BY id DESC";
+echo $buscar_receitas = "SELECT * FROM tb_receitas WHERE excluido IS NULL AND id_usuario = '$_SESSION[id]'  $where ORDER BY id DESC";
 $resultado = mysqli_query($conn, $buscar_receitas);
 ?>
 <div class="container pt-2">
@@ -76,7 +75,7 @@ $resultado = mysqli_query($conn, $buscar_receitas);
             </li>
         <?php } ?>
         <li class="col-12 bg-grey">
-            <p class="m-0 py-2"><span class="text-black">Total:</span> <span class="text-grey fw-medium">R$ <?= formatarValorReais3($total_receitas) ?></span></p>
+            <p class="m-0 py-2"><span class="text-black">Total Recebido:</span> <span class="text-grey fw-medium">R$ <?= formatarValorReais3($total_receitas) ?></span></p>
         </li>
     </ul>
 </div>

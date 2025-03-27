@@ -19,7 +19,7 @@ if (isset($_GET['data_inicio']) && isset($_GET['data_fim']) && !empty($_GET['dat
     $where .= " AND data_cadastro BETWEEN '$data_inicio' AND '$data_fim'";
 }
 
-$buscar_despesas = "SELECT * FROM tb_despesas WHERE excluido IS NULL $where ORDER BY data_cadastro DESC";
+echo $buscar_despesas = "SELECT * FROM tb_despesas WHERE excluido IS NULL AND id_usuario = '$_SESSION[id]' $where ORDER BY data_cadastro DESC";
 $resultado = mysqli_query($conn, $buscar_despesas);
 ?>
 <div class="container pt-2">
@@ -128,7 +128,7 @@ $resultado = mysqli_query($conn, $buscar_despesas);
             </li>
         <?php } ?>
         <li class="col-12 bg-grey">
-            <p class="m-0 py-2"><span class="text-black">Total:</span> <span class="text-red fw-medium">R$ <?= formatarValorReais3($total_despesas) ?></span></p>
+            <p class="m-0 py-2"><span class="text-black">Total Gasto:</span> <span class="text-red fw-medium">R$ <?= formatarValorReais3($total_despesas) ?></span></p>
         </li>
     </ul>
 </div>

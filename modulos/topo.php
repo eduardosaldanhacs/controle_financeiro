@@ -6,8 +6,8 @@ if (!isset($_SESSION['id'])) {
     header("Location:" . SITE . "modulos/login.php");
 }
 $saldo = 0.00;
-
-$busca_nome = "SELECT * FROM tb_usuarios WHERE id = 2";
+$id = $_SESSION['id'];
+$busca_nome = "SELECT * FROM tb_usuarios WHERE id = $id";
 $resultado = mysqli_query($conn, $busca_nome);
 $dados = mysqli_fetch_array($resultado);
 

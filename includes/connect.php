@@ -7,4 +7,5 @@
 
 session_start();
 $conn = new mysqli('localhost','root', '', 'sistema_ju');
+$_SESSION['connection'] = $conn;
 ?>

@@ -79,4 +79,10 @@
         return $date;
     }
 
+    function descobreUsuario($id) {
+        $sql = "SELECT * FROM tb_usuarios WHERE id = $id";
+        $query = mysqli_query($_SESSION['connection'], $sql);
+        return mysqli_fetch_array($query);
+    }
+
 ?>
