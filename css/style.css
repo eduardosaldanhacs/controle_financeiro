@@ -36,6 +36,18 @@
     background-color: #0ea308;
 }
 
+.text-grey {
+    color: rgb(0 185 33);
+}
+
+.text-red {
+    color: rgb(255, 0, 0);
+}
+
+.bg-grey {
+    background-color: rgb(221, 221, 221);
+}
+
 .input-sensivel {
     font-size: 1.2rem;
     border: none;
@@ -85,4 +97,12 @@
 .bg-yellow {
     /* background-color: #ffc107; */
     background-color: #ffd455;
+}
+
+.w-90 {
+    width: 90%;
+}
+
+.link:hover {
+    color: rgb(163, 163, 163) !important;
 }

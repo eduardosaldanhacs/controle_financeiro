@@ -34,11 +34,11 @@ if ($result->num_rows > 0) {
         exit;
     } else {
         alertMessage('Senha inválida', 'danger');
-        header("Location: " . SITE);
+        header("Location: " . SITE . "modulos/login.php");
         exit;
     }
 } else {
     alertMessage('Usuário ou senha inválidos', 'danger');
-    header("Location: " . SITE);
+    header("Location: " . SITE . "modulos/login.php");
     exit;
 }

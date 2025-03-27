@@ -4,18 +4,18 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 if (isset($_GET['nome']) && !empty($_GET['nome'])) {
-    $nome = htmlspecialchars($_GET['nome']); 
+    $nome = htmlspecialchars($_GET['nome']);
     $where .= " AND despesa LIKE '%$nome%'";
 }
 
 if (isset($_GET['pago']) && !empty($_GET['pago'])) {
-    $pago = htmlspecialchars($_GET['pago']); 
+    $pago = htmlspecialchars($_GET['pago']);
     $where .= " AND pago = '$pago'";
 }
 
 if (isset($_GET['data_inicio']) && isset($_GET['data_fim']) && !empty($_GET['data_inicio']) && !empty($_GET['data_fim'])) {
-    $data_inicio = htmlspecialchars($_GET['data_inicio']); 
-    $data_fim = htmlspecialchars($_GET['data_fim']); 
+    $data_inicio = htmlspecialchars($_GET['data_inicio']);
+    $data_fim = htmlspecialchars($_GET['data_fim']);
     $where .= " AND data_cadastro BETWEEN '$data_inicio' AND '$data_fim'";
 }
 
@@ -75,7 +75,9 @@ $resultado = mysqli_query($conn, $buscar_despesas);
             </div>
         </li>
         <?php
+        $total_despesas = 0.00;
         while ($despesa = mysqli_fetch_array($resultado)) {
+            $total_despesas += converterFormatoEntrada($despesa['valor']);
             $dataAtual = new DateTime();
             $dataLancamento = new DateTime($despesa['data_cadastro']);
             $diferencaDias = $dataLancamento->diff($dataAtual)->days;
@@ -102,11 +104,13 @@ $resultado = mysqli_query($conn, $buscar_despesas);
             }
         ?>
             <li class="col-12 text-center">
-                <div class="row justify-content-between align-items-center mb-0 py-3 border-bottom border-dark <?= $classeAtraso ?> <?php if(isset($pago)) { echo $pago; } ?>">
+                <div class="row justify-content-between align-items-center mb-0 py-3 border-bottom border-dark <?= $classeAtraso ?> <?php if (isset($pago)) {
+                                                                                                                                        echo $pago;
+                                                                                                                                    } ?>">
                     <div class="col-4">
                         <?php echo $despesa['despesa'] ?>
                     </div>
-    
+
                     <div id="valor-editavel" class="col-2 valor-editavel" data-id="<?= $despesa['id'] ?>">
                         <?= htmlspecialchars(($despesa['valor'])) ?>
                     </div>
@@ -123,5 +127,8 @@ $resultado = mysqli_query($conn, $buscar_despesas);
                 </div>
             </li>
         <?php } ?>
+        <li class="col-12 bg-grey">
+            <p class="m-0 py-2"><span class="text-black">Total:</span> <span class="text-red fw-medium">R$ <?= formatarValorReais3($total_despesas) ?></span></p>
+        </li>
     </ul>
 </div>

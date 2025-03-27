@@ -4,6 +4,7 @@ include('../includes/essenciais.php');
 <!DOCTYPE html>
 <html lang="pt-br">
 
+
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,8 +35,17 @@ include('../includes/essenciais.php');
 <body class="bg-1" onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
     <div class="container">
         <div class="text-start py-5">
-            <div class="row align-items-stretch d-flex justify-content-center">
-                <div class="col-md-5 sombra border rounded-5 px-4 border-4 flex-column d-flex h-100  text-white border-light">
+            <div class="row align-items-stretch d-flex justify-content-between">
+                <div class="col-md-7">
+                    <div class="d-flex flex-column flex-grow-1 justify-content-evenly align-items-center h-100">
+                        <h2 class="text-white text-uppercase text-center">Controle de Gastos</h2>
+                        <div class="col-6 text-center">
+                            <img src="<?= SITE ?>images/graphics.svg" alt="" class="img-fluid">
+                        </div>
+                        <p class="fs-7 text-white">Anote suas receitas e despesas com facilidade.</p>
+                    </div>
+                </div>
+                <div class="col-md-5 sombra border rounded-5 px-4 border-4 flex-column d-flex h-100 bg-2 text-white border-light">
                     <form action="<?= SITE ?>controllers/cadastrar.php" method="POST" class="d-flex flex-column flex-grow-1 justify-content-between">
                         <h1 class="py-4 text-center">Cadastro</h1>
                         <label for="">Nome</label>
@@ -48,7 +58,7 @@ include('../includes/essenciais.php');
                         <input type="password" class="form-control mb-3" required name="confirma_senha">
                         <button type="submit" class="btn btn-primary my-3">Entrar</button>
                         <div class="col-5 pb-3">
-                            <a href="<?= SITE ?>modulos/login.php" class="text-white text-decoration-none fs-7">Já possui login? Entre</a>
+                            <a href="<?= SITE ?>modulos/login.php" class="text-white text-decoration-none fs-7 link">Já possui login? Clique aqui</a>
                         </div>
                     </form>
                 </div>

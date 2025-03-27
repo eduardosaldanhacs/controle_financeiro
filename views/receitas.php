@@ -53,7 +53,9 @@ $resultado = mysqli_query($conn, $buscar_receitas);
             </div>
         </li>
         <?php
+        $total_receitas = 0.00;
         while ($receita = mysqli_fetch_array($resultado)) {
+            $total_receitas += converterFormatoEntrada($receita['valor']);
         ?>
             <li class="col-12 text-center">
                 <div class="row justify-content-between align-items-center mb-0 py-3 bg-green border-bottom border-dark">
@@ -73,5 +75,8 @@ $resultado = mysqli_query($conn, $buscar_receitas);
                 </div>
             </li>
         <?php } ?>
+        <li class="col-12 bg-grey">
+            <p class="m-0 py-2"><span class="text-black">Total:</span> <span class="text-grey fw-medium">R$ <?= formatarValorReais3($total_receitas) ?></span></p>
+        </li>
     </ul>
 </div>
