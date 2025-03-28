@@ -106,3 +106,10 @@
 .link:hover {
     color: rgb(163, 163, 163) !important;
 }
+
+.lista-faturas {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
