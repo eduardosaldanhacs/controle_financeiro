@@ -30,8 +30,8 @@ $resultado = mysqli_query($conn, $buscar_despesas);
             </div> -->
             <div class="d-flex justify-content-end pb-3">
                 <div class="col-2 pe-2"><a href="<?= SITE ?>cadastro_despesas" class="btn btn-success btn-add w-100">Nova Despesa</a></div>
-                <div class="col-2 pe-2"><a href="<?= SITE ?>tipos_de_despesas" class="btn btn-success btn-add w-100">Nova Categoria</a></div>
-                <div class="col-2"><a href="<?= SITE ?>listar_tipos_de_despesas" class="btn btn-success btn-add w-100">Listar Categorias</a></div>
+                <div class="col-2 pe-2"><a href="<?= SITE ?>tipos_de_despesas" class="btn btn-primary btn-add w-100">Nova Categoria</a></div>
+                <div class="col-2"><a href="<?= SITE ?>listar_tipos_de_despesas" class="btn btn-primary btn-add w-100">Listar Categorias</a></div>
             </div>
 
 

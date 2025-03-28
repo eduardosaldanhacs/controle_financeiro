@@ -19,8 +19,8 @@ $resultado = mysqli_query($conn, $buscar_receitas);
         <div class="col-12">
             <div class="d-flex justify-content-end pb-3">
                 <div class="col-2 pe-2"><a href="<?= SITE ?>cadastro_receitas" class="btn btn-success btn-add w-100">Nova Receita</a></div>
-                <div class="col-2 pe-2"><a href="<?= SITE ?>tipos_de_receitas" class="btn btn-success btn-add w-100">Nova Categoria</a></div>
-                <div class="col-2"><a href="<?= SITE ?>listar_tipos_de_receitas" class="btn btn-success btn-add w-100">Listar Categorias</a></div>
+                <div class="col-2 pe-2"><a href="<?= SITE ?>tipos_de_receitas" class="btn btn-primary btn-add w-100">Nova Categoria</a></div>
+                <div class="col-2"><a href="<?= SITE ?>listar_tipos_de_receitas" class="btn btn-primary btn-add w-100">Listar Categorias</a></div>
             </div>
         </div>
         <form action="<?= SITE ?>receitas" method="GET" class="d-flex align-items-center text-white">

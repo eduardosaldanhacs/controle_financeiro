@@ -85,4 +85,14 @@
         return mysqli_fetch_array($query);
     }
 
+    function atualizaSaldo($saldo, $id_usuario) {
+        $atualizar_saldo = "UPDATE tb_usuarios SET saldo = '$saldo' WHERE id = '$id_usuario'";
+        $query = mysqli_query($_SESSION['connection'], $atualizar_saldo);
+        return $query;
+    }
+
+    function formatarValor($valor) {
+        return number_format($valor, 2, ',', '');
+    }
+
 ?>
