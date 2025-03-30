@@ -19,7 +19,7 @@ if (isset($_GET['data_inicio']) && isset($_GET['data_fim']) && !empty($_GET['dat
     $where .= " AND data_cadastro BETWEEN '$data_inicio' AND '$data_fim'";
 }
 
-echo $buscar_despesas = "SELECT * FROM tb_despesas WHERE excluido IS NULL AND id_usuario = '$_SESSION[id]' $where ORDER BY data_cadastro DESC";
+$buscar_despesas = "SELECT * FROM tb_despesas WHERE excluido IS NULL AND id_usuario = '$_SESSION[id]' $where ORDER BY data_cadastro DESC";
 $resultado = mysqli_query($conn, $buscar_despesas);
 ?>
 <div class="container pt-2">
@@ -29,19 +29,19 @@ $resultado = mysqli_query($conn, $buscar_despesas);
                 <a href="<?= SITE ?>cadastro_despesas" class="btn btn-success btn-add">Adicionar</a>
             </div> -->
             <div class="d-flex justify-content-end pb-3">
-                <div class="col-2 pe-2"><a href="<?= SITE ?>cadastro_despesas" class="btn btn-success btn-add w-100">Nova Despesa</a></div>
-                <div class="col-2 pe-2"><a href="<?= SITE ?>tipos_de_despesas" class="btn btn-primary btn-add w-100">Nova Categoria</a></div>
-                <div class="col-2"><a href="<?= SITE ?>listar_tipos_de_despesas" class="btn btn-primary btn-add w-100">Listar Categorias</a></div>
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-4 col-4 pe-2"><a href="<?= SITE ?>cadastro_despesas" class="btn btn-success btn-add w-100">Nova Despesa</a></div>
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-4 col-4 pe-2"><a href="<?= SITE ?>tipos_de_despesas" class="btn btn-primary btn-add w-100">Nova Categoria</a></div>
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-4 col-4"><a href="<?= SITE ?>listar_tipos_de_despesas" class="btn btn-primary btn-add w-100">Listar Categorias</a></div>
             </div>
 
 
         </div>
-        <form action="<?= SITE ?>despesas" method="GET" class="d-flex justify-content-between align-items-center text-white">
-            <div class="col-4">
+        <form action="<?= SITE ?>despesas" method="GET" class="d-flex justify-content-between align-items-center text-white flex-xxl-row flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                 <label for="" class="form-label text-white">Busca: </label>
                 <input type="text" name="nome" class="form-control mb-2" id="nome" placeholder="Busque pelo nome da despesa" value="<?php echo isset($_GET['nome']) ? $_GET['nome'] : ''; ?>">
             </div>
-            <div class="col-2">
+            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12">
                 <label for="" class="form-label text-white">Tipos: </label>
                 <select name="pago" id="" class="form-select mb-2">
                     <option value="" selected>Escolha...</option>
@@ -50,7 +50,7 @@ $resultado = mysqli_query($conn, $buscar_despesas);
                     <option value="" <?= isset($_GET['pago']) && $_GET['pago'] == 'A' ? 'selected' : ''; ?>>Atrasados</option>
                 </select>
             </div>
-            <div class="col-4">
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                 <label for="" class="form-label text-white">Data de Vencimento: </label>
                 <i>(data inicio - fim)</i>
                 <div class="input-group">
@@ -58,7 +58,7 @@ $resultado = mysqli_query($conn, $buscar_despesas);
                     <input type="date" name="data_fim" class="form-control mb-2" id="data-fim" value="<?php echo isset($_GET['data_fim']) ? $_GET['data_fim'] : ''; ?>">
                 </div>
             </div>
-            <div class="col-1 mt-4 text-white">
+            <div class="col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-12 col-12 mt-xxl-4 mt-xl-4 mt-lg-4 mt-md-4 my-sm-1 mt-1 mb-2 text-white text-center">
                 <button type="submit" class="btn btn-outline-light">Buscar</button>
             </div>
         </form>
@@ -67,11 +67,14 @@ $resultado = mysqli_query($conn, $buscar_despesas);
     <ul class="row list-unstyled bg-light">
         <li class="col-12 text-white bg-2 py-3 text-center border-bottom border-dark">
             <div class="d-flex justify-content-between">
-                <div class="col-4">Despesa</div>
-                <div class="col-2">Valor</div>
-                <div class="col-2">Data de Lançamento</div>
-                <div class="col-2">Pago</div>
-                <div class="col-2">Ações</div>
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
+                    <span class="fs-6 fs-sm-5 fs-md-1 fs-lg-1 fs-xl-1 fs-xxl-1">Despesa</span>
+                </div>
+
+                <div class="col-2 fs-6">Valor</div>
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-3 col-3 fs-6">Lançamento</div>
+                <div class="col-2 fs-6">Pago</div>
+                <div class="col-2 fs-6">Ações</div>
             </div>
         </li>
         <?php
@@ -104,25 +107,27 @@ $resultado = mysqli_query($conn, $buscar_despesas);
             }
         ?>
             <li class="col-12 text-center">
-                <div class="row justify-content-between align-items-center mb-0 py-3 border-bottom border-dark <?= $classeAtraso ?> <?php if (isset($pago)) {
+                <div class="row justify-content-between align-items-center mb-0 py-xxl-3 py-xl-3 py-lg-3 py-md-3 py-sm-1 py-1   border-bottom border-dark <?= $classeAtraso ?> <?php if (isset($pago)) {
                                                                                                                                         echo $pago;
                                                                                                                                     } ?>">
-                    <div class="col-4">
-                        <?php echo $despesa['despesa'] ?>
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3 fs-6">
+                        <?= $despesa['despesa'] ?>
                     </div>
 
-                    <div id="valor-editavel" class="col-2 valor-editavel" data-id="<?= $despesa['id'] ?>">
+                    <div id="valor-editavel" class="col-2 valor-editavel fs-6" data-id="<?= $despesa['id'] ?>">
                         <?= htmlspecialchars(($despesa['valor'])) ?>
                     </div>
-                    <div class="col-2">
+                    <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-3 col-3 fs-6">
                         <?php echo converterYMDparaDMY($despesa['data_cadastro']) ?>
                     </div>
-                    <div class="col-2">
+                    <div class="col-2 fs-6">
                         <input type="checkbox" class="checkbox-grande checkbox-pago" data-user=<?= $_SESSION['id'] ?> data-id="<?= $despesa['id'] ?>" <?= $checkbox ?> onclick="refreshWithDelay()">
                     </div>
-                    <div class="col-2">
-                        <a href="<?= SITE ?>cadastro_despesas&cod=<?= $despesa['id'] ?>" class="fs-4 text-secondary"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a href="<?= SITE ?>controllers/excluir_despesa.php?id=<?= $despesa['id'] ?>" class="fs-4 ms-3 text-danger"><i class="fa-solid fa-trash"></i></a>
+                    <div class="col-2 fs-6">
+                        <div class="">
+                            <a href="<?= SITE ?>cadastro_despesas&cod=<?= $despesa['id'] ?>" class="fs-4 text-secondary"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="#" class="fs-4 ms-xxl-3 ms-xl-3 ms-lg-3 ms-md-3 ms-sm-0 ms-0 text-danger" onclick="confirmarExclusao('excluir_despesa.php',<?= $despesa['id'] ?>)"><i class="fa-solid fa-trash"></i></a>
+                        </div>
                     </div>
                 </div>
             </li>

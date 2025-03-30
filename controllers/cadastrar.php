@@ -9,13 +9,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validação básica
     if (empty($nome) || empty($cpf) || empty($senha) || empty($confirma_senha)) {
-        echo "<script>alert('Preencha todos os campos!'); window.location.href='cadastrar.php';</script>";
+        alertMessage('Preencha todos os campos!', 'danger');
+        header("Location:". SITE ."despesas");  
         exit;
     }
 
     // Verifica se as senhas coincidem
     if ($senha !== $confirma_senha) {
-        echo "<script>alert('As senhas não coincidem!'); window.location.href='cadastrar.php';</script>";
+        alertMessage('As senhas não coincidem!', 'danger');
+        header("Location:". SITE ."despesas");
         exit;
     }
 
@@ -26,7 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        echo "<script>alert('CPF já cadastrado!'); window.location.href='cadastrar.php';</script>";
+        alertMessage('CPF já cadastrado!', 'danger');
+        header("Location:". SITE ."despesas");
         exit;
     }
 
@@ -38,9 +41,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss", $nome, $cpf, $senha_hash);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Cadastro realizado com sucesso!'); window.location.href='login.php';</script>";
+        alertMessage('Cadastro realizado com sucesso!', 'success');
+        header("Location:". SITE ."despesas");
+        exit;
     } else {
-        echo "<script>alert('Erro ao cadastrar. Tente novamente.'); window.location.href='cadastrar.php';</script>";
+        alertMessage('Erro ao cadastrar. Tente novamente.', 'danger');
+        header("Location:". SITE ."despesas");
+        exit;
     }
 
     $stmt->close();

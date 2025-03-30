@@ -6,6 +6,6 @@
 // ini_set('display_errors', 1);
 
 session_start();
-$conn = new mysqli('localhost','root', '', 'sistema_ju');
+$conn = new mysqli('localhost','root', '', 'sistema_financeiro');
 $_SESSION['connection'] = $conn;
 ?>

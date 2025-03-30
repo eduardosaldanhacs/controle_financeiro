@@ -1,7 +1,7 @@
 <?php
     if($_GET['cod']) {
         $id = $_GET['cod'];
-        echo $buscar_despesa = "SELECT * FROM tb_tipos_despesas WHERE id = '$id'";
+        $buscar_despesa = "SELECT * FROM tb_tipos_despesas WHERE id = '$id'";
         $resultado = mysqli_query($conn, $buscar_despesa);
         $despesa = mysqli_fetch_array($resultado);
         $titulo = 'Atualizar';

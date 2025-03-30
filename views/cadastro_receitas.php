@@ -1,7 +1,7 @@
 <?php
     if($_GET['cod']) {
         $id = $_GET['cod'];
-        echo $buscar_receitas = "SELECT * FROM tb_receitas WHERE id = '$id'";
+        $buscar_receitas = "SELECT * FROM tb_receitas WHERE id = '$id'";
         $resultado = mysqli_query($conn, $buscar_receitas);
         $receita = mysqli_fetch_array($resultado);
         $titulo = 'Atualizar';

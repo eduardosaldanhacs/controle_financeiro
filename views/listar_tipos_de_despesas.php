@@ -12,7 +12,7 @@ if (isset($_GET['data_inicio']) && isset($_GET['data_fim']) && !empty($_GET['dat
     $where .= " AND data_cadastro BETWEEN '$data_inicio' AND '$data_fim'";
 }
 
-echo $buscar_despesas = "SELECT * FROM tb_tipos_despesas WHERE excluido IS NULL $where ORDER BY id DESC";
+$buscar_despesas = "SELECT * FROM tb_tipos_despesas WHERE excluido IS NULL $where ORDER BY id DESC";
 $resultado = mysqli_query($conn, $buscar_despesas);
 ?>
 <div class="container pt-2">

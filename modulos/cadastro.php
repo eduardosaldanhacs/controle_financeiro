@@ -68,3 +68,15 @@ include('../includes/essenciais.php');
     <?php
     include("rodape.php")
     ?>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script src="<?= SITE ?>includes/scripts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+        $(document).ready(function() {
+            $('#cpf').mask('000.000.000-00', {
+                reverse: false
+            });
+        });
+    </script>

@@ -11,7 +11,7 @@ if (isset($_GET['data_inicio']) && isset($_GET['data_fim']) && !empty($_GET['dat
     $where .= " AND data_cadastro BETWEEN '$data_inicio' AND '$data_fim'";
 }
 
-echo $buscar_receitas = "SELECT * FROM tb_receitas WHERE excluido IS NULL AND id_usuario = '$_SESSION[id]'  $where ORDER BY id DESC";
+$buscar_receitas = "SELECT * FROM tb_receitas WHERE excluido IS NULL AND id_usuario = '$_SESSION[id]'  $where ORDER BY id DESC";
 $resultado = mysqli_query($conn, $buscar_receitas);
 ?>
 <div class="container pt-2">
@@ -69,7 +69,7 @@ $resultado = mysqli_query($conn, $buscar_receitas);
                     </div>
                     <div class="col-2">
                         <a href="<?= SITE ?>cadastro_receitas&cod=<?= $receita['id'] ?>" class="fs-4 text-secondary"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a href="<?= SITE ?>controllers/excluir_receita.php?id=<?= $receita['id'] ?>" class="fs-4 ms-3 text-danger"><i class="fa-solid fa-trash"></i></a>
+                        <a href="#" class="fs-4 ms-3 text-danger" onclick="confirmarExclusao('excluir_receita.php',<?= $receita['id'] ?>)"><i class="fa-solid fa-trash"></i></a>
                     </div>
                 </div>
             </li>

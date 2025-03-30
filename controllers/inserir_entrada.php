@@ -7,14 +7,8 @@ $buscaSaldo = "SELECT saldo FROM tb_usuarios";
 $resultado = mysqli_query($conn, $buscaSaldo);
 $dados = mysqli_fetch_array($resultado);
 
-
-
-echo $entradaInicial . '</br>';
 $entradaInicial = converterFormatoEntrada($entradaInicial);
-echo $dados['saldo'] . '</br>';
-
 $saldo = $entradaInicial + $dados['saldo'];
-echo '</br>' . $saldo;
 
 $inserirSaldo = "UPDATE tb_usuarios SET saldo = '$saldo'";
 if (mysqli_query($conn, $inserirSaldo)) {

@@ -6,7 +6,7 @@ $dados = mysqli_fetch_array($resultado);
 <div class="container">
     <div class="row align-items-center h-100 justify-content-center py-5">
         <div class="col-6 border border-dark rounded-5 px-4 mb-5 border-3 text-white sombra me-5">
-            <form action="atualizar.php?id=<?php echo $id; ?>" method="POST">
+            <form action="atualizar.php?id=<?= $id; ?>" method="POST">
                 <div>
                     <h1 class="py-3">Editar Lançamentos</h1>
                     <label for="" class="form-label pt-3">
@@ -18,13 +18,13 @@ $dados = mysqli_fetch_array($resultado);
                     <label for="" class="form-label">
                         Valor
                     </label>
-                    <input type="text" name="valor" class="form-control mb-2" required id="valor" maxlength='3' value="<?php echo $dados['valor']; ?>">
+                    <input type="text" name="valor" class="form-control mb-2" required id="valor" maxlength='3' value="<?= $dados['valor']; ?>">
                 </div>
                 <div>
                     <label for="" class="form-label">
                         Data de Lançamento
                     </label>
-                    <input type="date" name="data" class="form-control mb-2" required id="data" maxlength='3' value="<?php echo $dados['data_cadastro']; ?>">
+                    <input type="date" name="data" class="form-control mb-2" required id="data" maxlength='3' value="<?= $dados['data_cadastro']; ?>">
                 </div>
                 <div>
                     <label for="" class="form-label">Pago</label>
@@ -35,7 +35,7 @@ $dados = mysqli_fetch_array($resultado);
                             $selected = '';
                         } ?>
                         <option value="N">Nao</option>
-                        <option value="S" <?php echo $selected ?>>Sim</option>
+                        <option value="S" <?= $selected ?>>Sim</option>
                     </select>
                 </div>
                 <div class="text-center pb-3">

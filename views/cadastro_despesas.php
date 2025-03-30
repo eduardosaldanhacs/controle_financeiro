@@ -1,7 +1,7 @@
 <?php
     if($_GET['cod']) {
         $id = $_GET['cod'];
-        echo $buscar_despesas = "SELECT * FROM tb_despesas WHERE id = '$id'";
+        $buscar_despesas = "SELECT * FROM tb_despesas WHERE id = '$id'";
         $resultado = mysqli_query($conn, $buscar_despesas);
         $despesa = mysqli_fetch_array($resultado);
         $titulo = 'Atualizar';
@@ -14,14 +14,14 @@
 
 <div class="container">
     <div class="row align-items-center h-100 justify-content-center py-5">
-        <div class="col-6 border-2 rounded-5 px-4 mb-5 border-3 text-white bg-light shadow-lg me-5">
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-10 col-10 border-2 rounded-5 px-4 mb-5 border-3 text-white bg-light shadow-lg">
             <form action="<?= SITE ?>controllers/<?= $action ?>" method="POST">
                 <h3 class="my-3 text-primary text-center"> <?= $titulo ?> Despesas</h3>
                 <label for="" class="form-label pt-3 text-dark">Despesas</label>
                 <select class="form-select mb-4" name="despesa" id="">
                     <option value="">---</option>
                     <?php
-                    $sql = "SELECT * FROM tb_despesas WHERE excluido IS NULL ORDER BY id DESC";
+                    $sql = "SELECT * FROM tb_tipos_despesas WHERE excluido IS NULL ORDER BY id DESC";
                     $query = mysqli_query($conn, $sql);
                     while ($tipos_despesa = mysqli_fetch_array($query)) { ?>
                         <option value="<?= $tipos_despesa['despesa']; ?>" <?= isset($tipos_despesa['despesa']) && $tipos_despesa['despesa'] == $despesa['despesa'] ? 'selected' : ''; ?>><?= $tipos_despesa['despesa']; ?></option>

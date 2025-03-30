@@ -5,5 +5,6 @@
 <link rel="stylesheet" href="css/style.css">
 <script src="https://kit.fontawesome.com/156d6a1fcd.js" crossorigin="anonymous"></script>
 
-
-
+<!-- Bootstrap JS (Popper.js é necessário para algumas funcionalidades do Bootstrap) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>

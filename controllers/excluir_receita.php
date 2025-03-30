@@ -10,16 +10,13 @@ $valor = $receita['valor'];
 
 $usuario = descobreUsuario($id_usuario);
 $saldo = $usuario['saldo'];
-echo $saldo . '</br>';
-echo converterFormatoEntrada($valor) . '</br>';
+converterFormatoEntrada($valor) . '</br>';
 
 $saldo = $saldo - converterFormatoEntrada($valor);
-echo $saldo . '</br>';
 
 $saldo_convertido = formatarValor($saldo);
-echo $saldo_convertido . '</br>';
 $excluir_receitas = "UPDATE tb_receitas SET excluido = 'S' WHERE id = '$id'";
-echo $atualizar_saldo = "UPDATE tb_usuarios SET saldo = $saldo_convertido";
+$atualizar_saldo = "UPDATE tb_usuarios SET saldo = $saldo_convertido";
 
 
 if (mysqli_query($conn, $excluir_receitas) && atualizaSaldo($saldo_convertido, $id_usuario)) {
