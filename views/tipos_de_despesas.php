@@ -27,6 +27,9 @@
                 </div>
             </form>
         </div>
+        <div class="col-7 text-center">
+            <a href="<?= SITE ?>despesas" class="btn btn-primary">Voltar</a>
+        </div>
     </div>
 </div>
 

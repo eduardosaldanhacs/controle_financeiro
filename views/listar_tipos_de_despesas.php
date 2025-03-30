@@ -20,6 +20,7 @@ $resultado = mysqli_query($conn, $buscar_despesas);
         <div class="col-12">
             <div class="d-flex justify-content-end pb-3">
                 <a href="<?= SITE ?>tipos_de_despesas" class="btn btn-success btn-add">Adicionar</a>
+                <a href="<?= SITE ?>despesas" class="btn btn-primary ms-2">Voltar</a>
             </div>
         </div>
         <form action="<?= SITE ?>listar_tipos_de_despesas" method="GET" class="d-flex align-items-center text-white flex-xxl-row flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
