@@ -113,3 +113,18 @@
     border: 1px solid #ccc;
     padding: 5px;
 }
+
+
+@media (max-width: 768px) {
+    .list-group-item {
+        font-size: 0.75rem !important; /* Aproximadamente 12px */
+    }
+
+    .fs-mobile {
+        font-size: 0.75rem !important; /* Aproximadamente 12px */
+    }
+
+    .fs-saldo-mobile {
+        font-size: 0.85rem !important; /* Aproximadamente 12px */
+    }
+}

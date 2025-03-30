@@ -35,8 +35,8 @@ include('../includes/essenciais.php');
 <body class="bg-1" onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
     <div class="container">
         <div class="text-start py-5">
-            <div class="row align-items-stretch d-flex justify-content-between">
-                <div class="col-md-7">
+            <div class="row align-items-stretch d-flex justify-xxl-content-between justify-xl-content-between justify-lg-content-between justify-md-content-between justify-sm-content-center justify-content-center h-100">
+                <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-10 col-10">
                     <div class="d-flex flex-column flex-grow-1 justify-content-evenly align-items-center h-100">
                         <h2 class="text-white text-uppercase text-center">Controle de Gastos</h2>
                         <div class="col-6 text-center">
@@ -45,19 +45,19 @@ include('../includes/essenciais.php');
                         <p class="fs-7 text-white">Anote suas receitas e despesas com facilidade.</p>
                     </div>
                 </div>
-                <div class="col-md-5 sombra border rounded-5 px-4 border-4 flex-column d-flex h-100 bg-2 text-white border-light">
+                <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-10 col-10 sombra border rounded-5 px-4 border-4 flex-column d-flex h-100 bg-2 text-white border-light">
                     <form action="<?= SITE ?>controllers/cadastrar.php" method="POST" class="d-flex flex-column flex-grow-1 justify-content-between">
                         <h1 class="py-4 text-center">Cadastro</h1>
-                        <label for="">Nome</label>
-                        <input type="text" class="form-control mb-3" required name="nome">
-                        <label for="">CPF</label>
-                        <input type="text" class="form-control mb-3" required name="cpf" id="cpf">
-                        <label for="">Senha</label>
-                        <input type="password" class="form-control mb-3" name="senha" required>
-                        <label for="">Confirma senha</label>
-                        <input type="password" class="form-control mb-3" required name="confirma_senha">
+                        <label for="">Nome:</label>
+                        <input type="text" class="form-control mb-3 mt-1" required name="nome">
+                        <label for="">CPF:</label>
+                        <input type="text" class="form-control mb-3 mt-1" required name="cpf" id="cpf">
+                        <label for="">Senha:</label>
+                        <input type="password" class="form-control mb-3 mt-1" name="senha" required>
+                        <label for="">Confirma senha:</label>
+                        <input type="password" class="form-control mb-3 mt-1" required name="confirma_senha">
                         <button type="submit" class="btn btn-primary my-3">Entrar</button>
-                        <div class="col-5 pb-3">
+                        <div class="col-10 pb-3">
                             <a href="<?= SITE ?>modulos/login.php" class="text-white text-decoration-none fs-7 link">Já possui login? Clique aqui</a>
                         </div>
                     </form>

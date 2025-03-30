@@ -14,7 +14,7 @@
 
 <div class="container">
     <div class="row align-items-center h-100 justify-content-center py-5">
-        <div class="col-6 border-2 rounded-5 px-4 mb-5 border-3 text-white bg-light shadow-lg me-5">
+        <div class="col-xxl-6 col-xl-6 col-lg-6  col-md-6 col-sm-10 col-10  border-2 rounded-5 px-4 mb-5 border-3 text-white bg-light shadow-lg">
             <form action="<?= SITE ?>controllers/<?= $action ?>" method="POST">
                 <h3 class="my-3 text-primary text-center"> <?= $titulo ?> Receitas</h3>
                 <label for="" class="form-label pt-3 text-dark">Tipos de Receitas</label>

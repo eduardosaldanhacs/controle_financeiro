@@ -1,3 +1,3 @@
 <?php
-define('SITE','http://localhost/sistema_financeiro/');
+define('SITE','http://localhost/controle_financeiro/');
 ?>

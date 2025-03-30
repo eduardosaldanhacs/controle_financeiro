@@ -32,23 +32,22 @@ $resultado_faturas = mysqli_query($conn, $query_faturas);
 
 <div class="container">
     <div class="row align-items-center h-100 justify-content-center">
-        <div class="col-6 border border-light rounded-5 px-4 mb-5 border-3 text-white sombra me-5 mt-3">
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-10 col-10  border border-light rounded-5 px-4 mb-5 border-3 text-white sombra mt-3">
             <h1 class="my-2 text-center">Controle Financeiro</h1>
         </div>
-
         <div class="col-12 text-white">
             <div class="row">
-                <div class="col-md-4 bg-success p-3 mb-3">
+                <div class="col-md-4 bg-success p-3 mb-xxl-3 mb-xl-3 mb-lg-3 mb-md-3 mb-sm-0 mb-0">
                     <h4>Receitas (Mês Atual)</h4>
                     <p class="fs-4">R$ <?= number_format($total_receitas, 2, ',', '.') ?></p>
                 </div>
 
-                <div class="col-md-4 bg-danger p-3 mb-3">
+                <div class="col-md-4 bg-danger p-3 mb-xxl-3 mb-xl-3 mb-lg-3 mb-md-3 mb-sm-0 mb-0">
                     <h4>Despesas (Mês Atual)</h4>
                     <p class="fs-4">R$ <?= number_format($total_despesas, 2, ',', '.') ?></p>
                 </div>
 
-                <div class="col-md-4 bg-primary p-3 mb-3">
+                <div class="col-md-4 bg-primary p-3 mb-xxl-3 mb-xl-3 mb-lg-3 mb-md-3 mb-sm-0 mb-0">
                     <h4>Lucro (Mês Atual)</h4>
                     <p class="fs-4">R$ <?= number_format($lucro_mes, 2, ',', '.') ?></p>
                 </div>

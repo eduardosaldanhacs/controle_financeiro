@@ -33,8 +33,8 @@ include('../includes/essenciais.php');
 <body class="bg-1" onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
     <div class="container">
         <div class="text-start py-5">
-            <div class="row align-items-stretch d-flex justify-content-between">
-                <div class="col-md-7">
+            <div class="row align-items-stretch d-flex justify-xxl-content-between justify-xl-content-between justify-lg-content-between justify-md-content-between justify-sm-content-center justify-content-center h-100"> 
+                <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-10 col-10">
                     <div class="d-flex flex-column flex-grow-1 justify-content-evenly align-items-center h-100">
                         <h2 class="text-white text-uppercase text-center">Controle de Gastos</h2>
                         <div class="col-6 text-center">
@@ -43,17 +43,21 @@ include('../includes/essenciais.php');
                         <p class="fs-7 text-white">Anote suas receitas e despesas com facilidade.</p>
                     </div>
                 </div>
-                <div class="col-md-5 sombra border rounded-5 px-4 border-4 flex-column d-flex h-100  text-white border-light bg-2">
+                <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-10 col-10 sombra border rounded-5 px-4 border-4 flex-column d-flex h-100  text-white border-light bg-2 text-center mt-xxl-0 mt-xl-0 mt-lg-0 mt-md-0 mt-sm-5 mt-5">
                     <form action="<?= SITE ?>validar_login.php" method="POST" class="d-flex flex-column flex-grow-1 justify-content-between">
                         <h1 class="py-4 text-center">Login</h1>
-                        <label for="">CPF</label>
-                        <input type="text" class="form-control mb-3" required name="cpf" id="cpf">
-                        <label for="">Senha</label>
-                        <input type="password" class="form-control mb-3" name="senha">
+                        <div class="text-start">
+                            <label for="">CPF:</label>
+                            <input type="text" class="form-control mb-3 mt-1" required name="cpf" id="cpf">
+                        </div>
+                        <div class="text-start">
+                            <label for="">Senha:</label>
+                            <input type="password" class="form-control mb-3 mt-1" name="senha">
+                        </div>
                         <button type="submit" class="btn btn-primary my-3">Entrar</button>
-                        <div class="col-5 pb-3">
-                            <a href="<?= SITE ?>controllers/recuperar_senha.php" class="link text-white text-decoration-none fs-7">Esqueci minha senha</a>
-                            <a href="<?= SITE ?>modulos/cadastro.php" class="link text-white text-decoration-none fs-7">Cadastre-se</a>
+                        <div class="col-10 pb-3 text-start">
+                            <div><a href="<?= SITE ?>controllers/recuperar_senha.php" class="link text-white text-decoration-none fs-7">Esqueci minha senha</a></div>
+                            <div><a href="<?= SITE ?>modulos/cadastro.php" class="link text-white text-decoration-none fs-7">Cadastre-se</a></div>
                         </div>
                     </form>
                 </div>

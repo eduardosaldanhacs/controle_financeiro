@@ -30,7 +30,7 @@
                         <input
                             type="<?= $saldoVisivel ? 'text' : 'password' ?>"
                             id="saldo"
-                            class="form-control input-sensivel fs-6 fs-xxl-5 fs-xl-5 fs-lg-5 fs-md-5 fs-sm-6  text-center"
+                            class="form-control input-sensivel text-center fs-saldo-mobile"
                             value="R$ <?= formatarValorReais3($saldo); ?>"
                             disabled>
                     </div>
