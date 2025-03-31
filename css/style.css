@@ -111,7 +111,7 @@
     max-height: 30vh;
     overflow-y: auto;
     border: 1px solid #ccc;
-    padding: 5px;
+    padding: 2px;
 }
 
 
@@ -126,5 +126,9 @@
 
     .fs-saldo-mobile {
         font-size: 0.85rem !important; /* Aproximadamente 12px */
+    }
+
+    .mobile-icon {
+        font-size: 1.25rem !important;
     }
 }

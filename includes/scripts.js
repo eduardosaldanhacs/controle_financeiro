@@ -87,7 +87,7 @@ function confirmarExclusao(caminho, id) {
         cancelButtonText: "Cancelar"
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href = "http://localhost/sistema_financeiro/controllers/" + caminho + "?id=" + id;
+            window.location.href = "http://localhost/controle_financeiro/controllers/" + caminho + "?id=" + id;
         }
     });
 }
@@ -116,7 +116,7 @@ $(document).ready(function () {
 
         // Chamada AJAX para atualizar o status
         $.ajax({
-            url: 'http://localhost/sistema_financeiro/controllers/ajax_atualiza_status.php',
+            url: 'http://localhost/controle_financeiro/controllers/ajax_atualiza_status.php',
             method: 'POST',
             data: {
                 id: id,

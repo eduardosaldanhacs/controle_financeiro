@@ -112,7 +112,7 @@ $resultado = mysqli_query($conn, $buscar_despesas);
                         <?= $despesa['despesa'] ?>
                     </div>
 
-                    <div id="valor-editavel" class="col-2 valor-editavel" data-id="<?= $despesa['id'] ?>">
+                    <div id="valor-editavel" class="col-2" data-id="<?= $despesa['id'] ?>">
                         <?= htmlspecialchars(($despesa['valor'])) ?>
                     </div>
                     <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-3 col-3">
@@ -123,8 +123,8 @@ $resultado = mysqli_query($conn, $buscar_despesas);
                     </div>
                     <div class="col-2">
                         <div class="">
-                            <a href="<?= SITE ?>cadastro_despesas&cod=<?= $despesa['id'] ?>" class="fs-4 text-secondary"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <a href="#" class="fs-4 ms-xxl-3 ms-xl-3 ms-lg-3 ms-md-3 ms-sm-0 ms-0 text-danger" onclick="confirmarExclusao('excluir_despesa.php',<?= $despesa['id'] ?>)"><i class="fa-solid fa-trash"></i></a>
+                            <a href="<?= SITE ?>cadastro_despesas&cod=<?= $despesa['id'] ?>" class="fs-4 text-secondary"><i class="fa-solid fa-pen-to-square mobile-icon"></i></a>
+                            <a href="#" class="fs-4 ms-xxl-3 ms-xl-3 ms-lg-3 ms-md-3 ms-sm-1 ms-1 text-danger mobile-icon" onclick="confirmarExclusao('excluir_despesa.php',<?= $despesa['id'] ?>)"><i class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                 </div>

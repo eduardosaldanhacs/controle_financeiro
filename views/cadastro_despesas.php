@@ -29,7 +29,7 @@
                 </select>
 
                 <label for="Valor" class="form-label text-dark">Valor:</label>
-                <input type="text" class="form-control mb-4" required name="valor" id="valor" value="<?= isset($despesa['valor']) ? $despesa['valor'] : ''; ?>">
+                <input type="text" class="form-control mb-4" minlength="3" required name="valor" id="valor" value="<?= isset($despesa['valor']) ? $despesa['valor'] : ''; ?>">
 
                 <label for="Data" class="form-label text-dark">Data:</label>
                 <input type="date" class="form-control mb-4" required name="data" value="<?= isset($despesa['data']) ? $despesa['data'] : date('Y-m-d'); ?>">

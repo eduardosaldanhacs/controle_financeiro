@@ -19,8 +19,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-5 col-5">
-                <label for="" class="form-label text-white">Saldo:</label>
+            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
+                <label for="" class="text-white">Saldo:</label>
                 <div class="d-flex align-items-center">
                     <?php
                     $saldo = isset($dados['saldo']) ? $dados['saldo'] : 0.00;

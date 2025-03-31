@@ -1,11 +1,13 @@
 <?php
 
 // Total de RECEITAS no mês atual
-$query_receitas = "SELECT SUM(valor) AS total_receitas 
-                   FROM tb_receitas 
-                   WHERE excluido IS NULL 
-                   AND MONTH(data_cadastro) = MONTH(CURDATE()) 
-                   AND YEAR(data_cadastro) = YEAR(CURDATE())";
+$query_receitas = "SELECT SUM(CAST(REPLACE(REPLACE(valor, '.', ''), ',', '.') 
+                    AS DECIMAL(10,2))) AS total_receitas FROM tb_receitas 
+                    WHERE excluido IS NULL 
+                    AND MONTH ( data_cadastro ) = MONTH (
+                    CURDATE()) 
+                    AND YEAR ( data_cadastro ) = YEAR (
+                    CURDATE())";
 $resultado_receitas = mysqli_query($conn, $query_receitas);
 $receitas = mysqli_fetch_array($resultado_receitas);
 $total_receitas = $receitas['total_receitas'] ?? 0;
@@ -55,14 +57,14 @@ $resultado_faturas = mysqli_query($conn, $query_faturas);
 
             <h4 class="mt-4 text-danger">Faturas Não Pagas:</h4>
             <?php if (mysqli_num_rows($resultado_faturas) > 0) { ?>
-                <ul class="list-group lista-faturas">
+                <ul class="list-group lista-faturas mb-5">
                     <?php while ($fatura = mysqli_fetch_array($resultado_faturas)) { ?>
                         <li class="list-group-item d-flex justify-content-between">
                             <?= $fatura['despesa'] ?> - R$ <?= ($fatura['valor']) ?>
                             <span class="text-danger">(Vence em <?= date('d/m/Y', strtotime($fatura['data_cadastro'])) ?>)</span>
                         </li>
                     <?php } ?>
-                </ul>   
+                </ul>
             <?php } else { ?>
                 <div class="alert alert-info mt-3">
                     <p class="text-danger m-0">Nenhuma fatura pendente.</p>

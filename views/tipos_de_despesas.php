@@ -23,7 +23,7 @@
                     <?php if($_GET['cod']) { ?>
                         <input type="hidden" name="id" value="<?= $despesa['id']; ?>">
                     <?php } ?>
-                    <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
+                    <button type="submit" class="btn btn-success btn-lg"><?= $titulo ?></button>
                 </div>
             </form>
         </div>
